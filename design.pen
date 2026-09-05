@@ -645,6 +645,7 @@
       "name": "3 Выдача после разбора",
       "clip": true,
       "width": 900,
+      "height": 1500,
       "fill": "#0f0f12",
       "layout": "vertical",
       "gap": 16,
@@ -652,7 +653,7 @@
       "children": [
         {
           "type": "frame",
-          "id": "o9XljO",
+          "id": "ovgIq",
           "name": "Шкала",
           "width": "fill_container",
           "fill": "#17161c",
@@ -665,7 +666,7 @@
           "children": [
             {
               "type": "text",
-              "id": "E8KEoO",
+              "id": "hg1XG",
               "fill": "#e8e6ee",
               "content": "Сколько это часов работы",
               "fontFamily": "Literata",
@@ -674,22 +675,21 @@
             },
             {
               "type": "frame",
-              "id": "fA3qt",
-              "name": "Строка — Нужно на работу",
+              "id": "un7WN",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
               "children": [
                 {
                   "type": "frame",
-                  "id": "g6iDp7",
+                  "id": "rAoir",
                   "width": "fill_container",
                   "justifyContent": "space_between",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "XI7Mg",
+                      "id": "jD9Ww",
                       "fill": "#9b98a8",
                       "content": "Нужно на работу",
                       "fontFamily": "Golos Text",
@@ -698,9 +698,9 @@
                     },
                     {
                       "type": "text",
-                      "id": "kTGFI",
+                      "id": "mCvmt",
                       "fill": "#e8e6ee",
-                      "content": "34–46 ч",
+                      "content": "50–75 ч",
                       "fontFamily": "Golos Text",
                       "fontSize": 14,
                       "fontWeight": "600"
@@ -709,7 +709,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "buGfH",
+                  "id": "eUoFZ",
                   "clip": true,
                   "width": "fill_container",
                   "height": 20,
@@ -720,17 +720,17 @@
                   "children": [
                     {
                       "type": "rectangle",
-                      "id": "sYBhq",
+                      "id": "RwwZI",
                       "fill": "#ff8a3d",
-                      "width": 510,
+                      "width": 460,
                       "height": "fill_container"
                     },
                     {
                       "type": "rectangle",
-                      "id": "qPrc6",
+                      "id": "AFZzN",
                       "opacity": 0.4,
                       "fill": "#ff8a3d",
-                      "width": 180,
+                      "width": 230,
                       "height": "fill_container"
                     }
                   ]
@@ -739,22 +739,21 @@
             },
             {
               "type": "frame",
-              "id": "vMzjF",
-              "name": "Строка — Есть в сроке",
+              "id": "e3wIXr",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
               "children": [
                 {
                   "type": "frame",
-                  "id": "BnoXT",
+                  "id": "hDtcG",
                   "width": "fill_container",
                   "justifyContent": "space_between",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "VC4d1",
+                      "id": "EwrmM",
                       "fill": "#9b98a8",
                       "content": "Есть в сроке",
                       "fontFamily": "Golos Text",
@@ -763,9 +762,9 @@
                     },
                     {
                       "type": "text",
-                      "id": "bsmW3",
+                      "id": "oOVCA",
                       "fill": "#e8e6ee",
-                      "content": "30 ч",
+                      "content": "45 ч",
                       "fontFamily": "Golos Text",
                       "fontSize": 14,
                       "fontWeight": "600"
@@ -774,7 +773,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Wmx9g",
+                  "id": "qQDBz",
                   "clip": true,
                   "width": "fill_container",
                   "height": 20,
@@ -785,9 +784,9 @@
                   "children": [
                     {
                       "type": "rectangle",
-                      "id": "MznyX",
+                      "id": "DM4lg",
                       "fill": "#4a3d63",
-                      "width": 450,
+                      "width": 414,
                       "height": "fill_container"
                     }
                   ]
@@ -796,13 +795,13 @@
             },
             {
               "type": "frame",
-              "id": "yvR16",
+              "id": "G5fet",
               "gap": 6,
               "alignItems": "center",
               "children": [
                 {
                   "type": "text",
-                  "id": "a38mX",
+                  "id": "oKg8X",
                   "fill": "#9b98a8",
                   "content": "Не хватает",
                   "fontFamily": "Golos Text",
@@ -811,9 +810,9 @@
                 },
                 {
                   "type": "text",
-                  "id": "X1j62L",
-                  "fill": "#f0745a",
-                  "content": "4–16 часов",
+                  "id": "LJawc",
+                  "fill": "#ff8a3d",
+                  "content": "5–30 часов",
                   "fontFamily": "Golos Text",
                   "fontSize": 15,
                   "fontWeight": "600"
@@ -824,7 +823,7 @@
         },
         {
           "type": "frame",
-          "id": "whRGA",
+          "id": "FSk1M",
           "name": "Плитки",
           "width": "fill_container",
           "height": 114,
@@ -833,7 +832,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "KxwOE",
+              "id": "C3DP4A",
               "width": "fill_container",
               "height": "fill_container",
               "fill": "#17161c",
@@ -843,20 +842,20 @@
               "layout": "vertical",
               "gap": 6,
               "padding": 16,
-              "justifyContent": "center",
+              "justifyContent": "space_between",
               "children": [
                 {
                   "type": "text",
-                  "id": "Ju9in",
+                  "id": "KBHpj",
                   "fill": "#e8e6ee",
-                  "content": "34–46",
+                  "content": "50–75",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "UyUnu",
+                  "id": "G8olh",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -870,7 +869,7 @@
             },
             {
               "type": "frame",
-              "id": "CB8LI",
+              "id": "q3eRwV",
               "width": "fill_container",
               "height": "fill_container",
               "fill": "#17161c",
@@ -880,20 +879,20 @@
               "layout": "vertical",
               "gap": 6,
               "padding": 16,
-              "justifyContent": "center",
+              "justifyContent": "space_between",
               "children": [
                 {
                   "type": "text",
-                  "id": "bMrUh",
+                  "id": "PVxqp",
                   "fill": "#e8e6ee",
-                  "content": "30",
+                  "content": "45",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "eGpWJ",
+                  "id": "MIpIe",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -907,7 +906,7 @@
             },
             {
               "type": "frame",
-              "id": "xCFH0",
+              "id": "nko8U",
               "width": "fill_container",
               "height": "fill_container",
               "fill": "#17161c",
@@ -917,24 +916,24 @@
               "layout": "vertical",
               "gap": 6,
               "padding": 16,
-              "justifyContent": "center",
+              "justifyContent": "space_between",
               "children": [
                 {
                   "type": "text",
-                  "id": "oz96J",
+                  "id": "zj8TB",
                   "fill": "#e8e6ee",
-                  "content": "3",
+                  "content": "12",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "lpZy1",
+                  "id": "O273d",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "невысказанных требования",
+                  "content": "невысказанных требований",
                   "lineHeight": 1.35,
                   "fontFamily": "Golos Text",
                   "fontSize": 12.5,
@@ -944,7 +943,7 @@
             },
             {
               "type": "frame",
-              "id": "ukuju",
+              "id": "K92WuP",
               "width": "fill_container",
               "height": "fill_container",
               "fill": "#17161c",
@@ -954,20 +953,20 @@
               "layout": "vertical",
               "gap": 6,
               "padding": 16,
-              "justifyContent": "center",
+              "justifyContent": "space_between",
               "children": [
                 {
                   "type": "text",
-                  "id": "KTOhp",
+                  "id": "s40lM",
                   "fill": "#ff8a3d",
-                  "content": "3",
+                  "content": "4",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "KciwP",
+                  "id": "BdmNu",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -981,7 +980,7 @@
             },
             {
               "type": "frame",
-              "id": "KQOAL",
+              "id": "ufh0b",
               "width": "fill_container",
               "height": "fill_container",
               "fill": "#17161c",
@@ -991,24 +990,24 @@
               "layout": "vertical",
               "gap": 6,
               "padding": 16,
-              "justifyContent": "center",
+              "justifyContent": "space_between",
               "children": [
                 {
                   "type": "text",
-                  "id": "Du23N",
+                  "id": "i8CfYI",
                   "fill": "#e8e6ee",
-                  "content": "3",
+                  "content": "11",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "H0wFa",
+                  "id": "a2mBFR",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "вопроса до старта",
+                  "content": "вопросов до старта",
                   "lineHeight": 1.35,
                   "fontFamily": "Golos Text",
                   "fontSize": 12.5,
@@ -1020,20 +1019,19 @@
         },
         {
           "type": "frame",
-          "id": "c8X7J",
-          "clip": true,
+          "id": "N2DAmB",
           "width": "fill_container",
           "layout": "vertical",
           "gap": 8,
           "children": [
             {
               "type": "frame",
-              "id": "MYH8a",
+              "id": "PXrqJ",
               "gap": 8,
               "children": [
                 {
                   "type": "frame",
-                  "id": "EbIIV",
+                  "id": "rJgWs",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1042,7 +1040,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "FYFUP",
+                      "id": "yWl58",
                       "fill": "#9b98a8",
                       "content": "Стоит ли браться",
                       "fontFamily": "Golos Text",
@@ -1053,7 +1051,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "d13KB",
+                  "id": "l8e4m",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1062,7 +1060,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "BsgJI",
+                      "id": "GO5nZ",
                       "fill": "#9b98a8",
                       "content": "Что просят буквально",
                       "fontFamily": "Golos Text",
@@ -1073,7 +1071,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "y6t2n",
+                  "id": "PaHxl",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1082,7 +1080,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "uIDfH",
+                      "id": "k8g31",
                       "fill": "#9b98a8",
                       "content": "Чего в брифе нет, но спросят",
                       "fontFamily": "Golos Text",
@@ -1095,12 +1093,12 @@
             },
             {
               "type": "frame",
-              "id": "r3ga9G",
+              "id": "y77BFS",
               "gap": 8,
               "children": [
                 {
                   "type": "frame",
-                  "id": "Uo96W",
+                  "id": "p4ZPrY",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1109,7 +1107,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "EG7mS",
+                      "id": "UhOjK",
                       "fill": "#9b98a8",
                       "content": "Как это будут оценивать",
                       "fontFamily": "Golos Text",
@@ -1120,7 +1118,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "dnqcG",
+                  "id": "fj7j5",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1129,7 +1127,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "lFWqC",
+                      "id": "fufWp",
                       "fill": "#9b98a8",
                       "content": "Красные флаги",
                       "fontFamily": "Golos Text",
@@ -1140,7 +1138,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "T8jNi",
+                  "id": "x2pCSI",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1149,7 +1147,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "RBVHH",
+                      "id": "ushXJ",
                       "fill": "#9b98a8",
                       "content": "Что спросить до старта",
                       "fontFamily": "Golos Text",
@@ -1160,7 +1158,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "J4F59c",
+                  "id": "y7vsNP",
                   "fill": "#17161c",
                   "cornerRadius": 999,
                   "stroke": "#2a2833",
@@ -1169,7 +1167,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "rxZUJ",
+                      "id": "J4YuJi",
                       "fill": "#9b98a8",
                       "content": "Что сдавать",
                       "fontFamily": "Golos Text",
@@ -1184,7 +1182,8 @@
         },
         {
           "type": "frame",
-          "id": "WXwJN",
+          "id": "inIv4",
+          "name": "Раздел — Стоит ли браться",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 14,
@@ -1196,7 +1195,7 @@
           "children": [
             {
               "type": "text",
-              "id": "WTqta",
+              "id": "dG4qD",
               "fill": "#e8e6ee",
               "content": "Стоит ли браться",
               "fontFamily": "Literata",
@@ -1205,11 +1204,11 @@
             },
             {
               "type": "text",
-              "id": "jtvpE",
+              "id": "RSHsn",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Разведка конкурентов 4–6 ч, структура 6–8 ч, макеты 14–20 ч, состояния и адаптив 6–8 ч, подача 4 ч. Итого 34–46 часов. При сроке в неделю и параллельной работе это не влезает.",
+              "content": "Разведка предметной области 5–8 ч, аудит и таблица конкурентов 5–7 ч, гипотезы и структура 5–7 ч, тексты 6–9 ч, визуальная концепция 5–8 ч, первый экран 5–8 ч, два-три блока 8–13 ч, мобильный экран 2–3 ч, оформление подачи и защита 4–6 ч.\nИтого 50–75 часов. В двух неделях при параллельной работе примерно 45 часов: впритык, и только если резать полировку.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1219,7 +1218,7 @@
         },
         {
           "type": "frame",
-          "id": "Mhspo",
+          "id": "IN3RX",
           "name": "Раздел — Что просят буквально",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1232,7 +1231,7 @@
           "children": [
             {
               "type": "text",
-              "id": "fEisl",
+              "id": "zruPh",
               "fill": "#e8e6ee",
               "content": "Что просят буквально",
               "fontFamily": "Literata",
@@ -1241,11 +1240,11 @@
             },
             {
               "type": "text",
-              "id": "SEtbZ",
+              "id": "nTHpA",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Один экран лендинга. Форма записи на пробный урок. Адаптив под телефон. Ориентир — сайты конкурентов.",
+              "content": "Страница услуги «Персональный брокер», а не приложение и не личный кабинет. Первый экран и 2–3 блока в высоком качестве. Первый экран в мобильном виде. Остальное на уровне структуры. Объяснение решения в любом формате. Защита 15–20 минут с рассказом, что делали руками, а что с ИИ.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1255,7 +1254,8 @@
         },
         {
           "type": "frame",
-          "id": "c0C5D",
+          "id": "i9F5h",
+          "name": "Раздел — Чего в брифе нет, но спросят",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 14,
@@ -1267,7 +1267,7 @@
           "children": [
             {
               "type": "text",
-              "id": "K0BnY",
+              "id": "vbzYC",
               "fill": "#e8e6ee",
               "content": "Чего в брифе нет, но спросят",
               "fontFamily": "Literata",
@@ -1276,11 +1276,11 @@
             },
             {
               "type": "text",
-              "id": "oZCA8",
+              "id": "ljcRH",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Объяснить выбор структуры — М2 · «на твой вкус» значит, что судить будут ход мысли.\nПоказать состояния формы — М5 · форма названа прямо, она и есть предмет проверки.\nТаблица конкурентов с выводом — М3 · сбор без вывода не засчитывается.",
+              "content": "1. Версия о причинах провала до всякого макета. М3 · в брифе есть блок «Проблема», значит ждут диагноз, а не только страницу.\n2. Достоверность финансовых деталей: внебиржевые сделки, структурные продукты, статус квалифицированного инвестора, дисклеймеры. М4 · одна неверная деталь обнуляет доверие ко всей работе.\n3. Карта всей страницы с назначением каждого блока. М5 · «остальное на уровне структуры» проверяется как отдельный артефакт.\n4. Что считается целевым действием и что происходит за ним. М3\n5. Ответ на вопрос про порог входа и цену. М4\n6. Тексты пишет дизайнер, и они часть оценки. М1\n7. Аудит того, что есть сейчас, с выводами. М3\n8. Происхождение визуального решения и обратная связь референсов. М8\n9. Премиальность без заимствованного клише. М8\n10. Базовые нормы ремесла: сетка, компоненты, состояния. М9\n11. Приоритеты как отдельно предъявленное решение. М7\n12. Что считается «страница работает», с числами. М6",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1290,7 +1290,7 @@
         },
         {
           "type": "frame",
-          "id": "FrOnG",
+          "id": "JQl6B",
           "name": "Раздел — Как это будут оценивать",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1303,7 +1303,7 @@
           "children": [
             {
               "type": "text",
-              "id": "bXlKx",
+              "id": "k8Xm1",
               "fill": "#e8e6ee",
               "content": "Как это будут оценивать",
               "fontFamily": "Literata",
@@ -1312,11 +1312,11 @@
             },
             {
               "type": "text",
-              "id": "w9M2On",
+              "id": "af8IF",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Смотреть будет дизайнер, а не маркетолог: связность решения важнее красоты отдельных блоков. Проверят, объяснено ли, почему блоки идут в таком порядке.",
+              "content": "Смотреть будет продуктовый дизайнер уровня senior или арт-директор, а не маркетолог. Проверят ход мысли: почему страница устроена так, откуда взялась структура, чем подтверждается каждое решение. Красота отдельных блоков вторична.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1326,7 +1326,7 @@
         },
         {
           "type": "frame",
-          "id": "Oe8Rx",
+          "id": "Blum2",
           "name": "Раздел — Красные флаги",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1339,7 +1339,7 @@
           "children": [
             {
               "type": "text",
-              "id": "AJIt7",
+              "id": "ZUlDd",
               "fill": "#f0745a",
               "content": "Красные флаги",
               "fontFamily": "Literata",
@@ -1348,11 +1348,11 @@
             },
             {
               "type": "text",
-              "id": "tjt94",
+              "id": "jI4Ez",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Тестовая неоплачиваемая работа на реальном продукте школы. Объём соответствует спринту команды, а не пробной задаче. Ни одной точки обратной связи по дороге.",
+              "content": "Задание описывает реальный текущий продукт заказчика, а не учебную ситуацию. Объём соответствует спринту команды, а не пробной задаче. Ни одной точки обратной связи внутри двух недель. Не сказано, что будет с правами на работу.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1362,7 +1362,7 @@
         },
         {
           "type": "frame",
-          "id": "MOI5F",
+          "id": "wsvUZ",
           "name": "Раздел — Что спросить до старта",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1375,7 +1375,7 @@
           "children": [
             {
               "type": "text",
-              "id": "Kl66p",
+              "id": "dpqeE",
               "fill": "#e8e6ee",
               "content": "Что спросить до старта",
               "fontFamily": "Literata",
@@ -1384,11 +1384,11 @@
             },
             {
               "type": "text",
-              "id": "d8Nlig",
+              "id": "bdWgh",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Кто будет смотреть работу и по каким критериям вы её примете?\nНужны ли состояния формы или достаточно основного экрана?\nОтдавать макетом в Figma или PDF?",
+              "content": "Есть ли доступ к аналитике текущей страницы: конверсия, воронка, причины отказов?\nКто целевой клиент по их данным, а не по моим предположениям?\nПорог входа 8 млн озвучивается публично или это внутренняя информация?\nЧто считается целевым действием: заявка, звонок, встреча?\nЕсть ли гайдлайны бренда и ограничения по визуалу?",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1398,7 +1398,7 @@
         },
         {
           "type": "frame",
-          "id": "u5V6d",
+          "id": "RwRqU",
           "name": "Раздел — Что сдавать",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1411,7 +1411,7 @@
           "children": [
             {
               "type": "text",
-              "id": "fPoHz",
+              "id": "le1Zc",
               "fill": "#e8e6ee",
               "content": "Что сдавать",
               "fontFamily": "Literata",
@@ -1420,11 +1420,11 @@
             },
             {
               "type": "text",
-              "id": "FnCp4",
+              "id": "Tx3re",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Макет главного экрана, записка с объяснением решений, таблица конкурентов с выводом.",
+              "content": "Макет первого экрана и 2–3 блоков, мобильный первый экран, карта всей страницы, документ с объяснением решения, таблица конкурентов с выводами, список гипотез с метриками.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1442,6 +1442,7 @@
       "name": "4 Проверка работы",
       "clip": true,
       "width": 900,
+      "height": 1560,
       "fill": "#0f0f12",
       "layout": "vertical",
       "gap": 16,
@@ -1449,8 +1450,7 @@
       "children": [
         {
           "type": "frame",
-          "id": "j6FeMm",
-          "name": "Вердикт",
+          "id": "EPTLW",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 14,
@@ -1462,7 +1462,7 @@
           "children": [
             {
               "type": "text",
-              "id": "bDB5g",
+              "id": "B88hB",
               "fill": "#ff8a3d",
               "content": "Дорабатывать",
               "fontFamily": "Literata",
@@ -1471,9 +1471,9 @@
             },
             {
               "type": "text",
-              "id": "REmms",
+              "id": "Q4kCnz",
               "fill": "#9b98a8",
-              "content": "4–5 ч на доработку · 4 из 12 ожиданий закрыто",
+              "content": "6–9 ч на доработку · 6 из 14 ожиданий закрыто",
               "fontFamily": "Golos Text",
               "fontSize": 14,
               "fontWeight": "normal"
@@ -1482,8 +1482,7 @@
         },
         {
           "type": "frame",
-          "id": "dPk2F",
-          "name": "Сетка ожиданий",
+          "id": "gOM9k",
           "width": "fill_container",
           "height": 14,
           "gap": 6,
@@ -1491,110 +1490,126 @@
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "P75X6",
+              "id": "e8o7E9",
               "fill": "#7bd88f",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "xLlXY",
+              "id": "Q0NAs",
               "fill": "#7bd88f",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "f4D0Zr",
+              "id": "Mzvki",
               "fill": "#7bd88f",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "UeNpW",
+              "id": "z02OCi",
               "fill": "#7bd88f",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "dpVzd",
-              "fill": "#2a2833",
-              "width": 22,
+              "id": "emupr",
+              "fill": "#7bd88f",
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "SHiem",
-              "fill": "#2a2833",
-              "width": 22,
+              "id": "UqJAd",
+              "fill": "#7bd88f",
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "c10hG",
+              "id": "lLBzw",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "e0p2Nq",
+              "id": "YQkUc",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "NtQev",
+              "id": "XUKpI",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "bZ6Kj",
+              "id": "TzfV7",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "hG9Xq",
+              "id": "tfmAO",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
               "height": 14
             },
             {
               "type": "rectangle",
               "cornerRadius": 3,
-              "id": "sbGIx",
+              "id": "lKGrc",
               "fill": "#2a2833",
-              "width": 22,
+              "width": 20,
+              "height": 14
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 3,
+              "id": "i5spg",
+              "fill": "#2a2833",
+              "width": 20,
+              "height": 14
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 3,
+              "id": "K167X7",
+              "fill": "#2a2833",
+              "width": 20,
               "height": 14
             }
           ]
         },
         {
           "type": "frame",
-          "id": "Z6Wu0B",
+          "id": "d7sCEd",
           "width": "fill_container",
           "gap": 8,
           "children": [
             {
               "type": "frame",
-              "id": "m9ndDH",
+              "id": "oKdkY",
               "fill": "#17161c",
               "cornerRadius": 999,
               "stroke": "#2a2833",
@@ -1603,7 +1618,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "AFcDn",
+                  "id": "PRAAZ",
                   "fill": "#9b98a8",
                   "content": "За что срежут первым делом",
                   "fontFamily": "Golos Text",
@@ -1614,7 +1629,7 @@
             },
             {
               "type": "frame",
-              "id": "DJCZh",
+              "id": "dPkfo",
               "fill": "#17161c",
               "cornerRadius": 999,
               "stroke": "#2a2833",
@@ -1623,7 +1638,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "vdv7z",
+                  "id": "Q44Aa",
                   "fill": "#9b98a8",
                   "content": "Что уже закрыто",
                   "fontFamily": "Golos Text",
@@ -1634,7 +1649,7 @@
             },
             {
               "type": "frame",
-              "id": "SOzU3",
+              "id": "arfrO",
               "fill": "#17161c",
               "cornerRadius": 999,
               "stroke": "#2a2833",
@@ -1643,7 +1658,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "tKMVP",
+                  "id": "IsVjg",
                   "fill": "#9b98a8",
                   "content": "Чего не хватает",
                   "fontFamily": "Golos Text",
@@ -1654,7 +1669,7 @@
             },
             {
               "type": "frame",
-              "id": "fpLp8",
+              "id": "wFOin",
               "fill": "#17161c",
               "cornerRadius": 999,
               "stroke": "#2a2833",
@@ -1663,7 +1678,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "sPFr3",
+                  "id": "KQtvn",
                   "fill": "#9b98a8",
                   "content": "Что дописать перед сдачей",
                   "fontFamily": "Golos Text",
@@ -1674,7 +1689,7 @@
             },
             {
               "type": "frame",
-              "id": "qqM2E",
+              "id": "Fg0mr",
               "fill": "#17161c",
               "cornerRadius": 999,
               "stroke": "#2a2833",
@@ -1683,7 +1698,7 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "o4Njy",
+                  "id": "YBunE",
                   "fill": "#9b98a8",
                   "content": "Как это прочтут",
                   "fontFamily": "Golos Text",
@@ -1696,8 +1711,7 @@
         },
         {
           "type": "frame",
-          "id": "UZpKt",
-          "name": "Риски",
+          "id": "pAoGj",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 14,
@@ -1709,7 +1723,7 @@
           "children": [
             {
               "type": "text",
-              "id": "pYqs5",
+              "id": "Nw3wK",
               "fill": "#9b98a8",
               "content": "ЗА ЧТО СРЕЖУТ ПЕРВЫМ ДЕЛОМ",
               "fontFamily": "Golos Text",
@@ -1719,18 +1733,18 @@
             },
             {
               "type": "frame",
-              "id": "Gio1Q",
+              "id": "qnetA",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 4,
               "children": [
                 {
                   "type": "text",
-                  "id": "xDa6l",
+                  "id": "NVCjo",
                   "fill": "#e8e6ee",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "1. Сдача без единого слова.",
+                  "content": "1. «81% идей в плюсе» без сноски.",
                   "lineHeight": 1.4,
                   "fontFamily": "Golos Text",
                   "fontSize": 16,
@@ -1738,11 +1752,11 @@
                 },
                 {
                   "type": "text",
-                  "id": "nMZad",
+                  "id": "ueve2",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Голая ссылка на Figma без записки — самый частый повод отказать при нормальном макете: нечего обсуждать на встрече, непонятно, за что вы отвечаете.",
+                  "content": "Для брокера это не спорная цифра, а потенциальное нарушение в рекламе финансовых услуг. Один этот элемент способен перевесить хорошую структуру: читается как непонимание среды, в которой предстоит работать.",
                   "lineHeight": 1.55,
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
@@ -1752,18 +1766,18 @@
             },
             {
               "type": "frame",
-              "id": "XtyFT",
+              "id": "TMiF2",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 4,
               "children": [
                 {
                   "type": "text",
-                  "id": "RDGWn",
+                  "id": "b9NasS",
                   "fill": "#e8e6ee",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "2. «Один экран» против четырёх блоков без объяснения.",
+                  "content": "2. Мобильная версия из одного экрана.",
                   "lineHeight": 1.4,
                   "fontFamily": "Golos Text",
                   "fontSize": 16,
@@ -1771,11 +1785,11 @@
                 },
                 {
                   "type": "text",
-                  "id": "txi3q",
+                  "id": "BX7Gj",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Прямое расхождение с брифом читается как невнимательность, и это бьёт сильнее, чем любая ошибка в вёрстке макета.",
+                  "content": "Задание про страницу сайта, а не про первый экран. Незакрытыми остались ровно те блоки, где мобайл сложный, и это выглядит как обход трудного места.",
                   "lineHeight": 1.55,
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
@@ -1785,18 +1799,18 @@
             },
             {
               "type": "frame",
-              "id": "xD10P",
+              "id": "KJGIz",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 4,
               "children": [
                 {
                   "type": "text",
-                  "id": "P64X5n",
+                  "id": "LCSEe",
                   "fill": "#e8e6ee",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "3. Форма без состояний.",
+                  "content": "3. Чужая айдентика внутри страницы про уникальность услуги.",
                   "lineHeight": 1.4,
                   "fontFamily": "Golos Text",
                   "fontSize": 16,
@@ -1804,11 +1818,11 @@
                 },
                 {
                   "type": "text",
-                  "id": "ZRzHP",
+                  "id": "XQi8p",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Вся суть задания — форма записи. Если она нарисована в одном виде, вывод будет: дизайнер интерфейсов из вас пока не получается, картинки рисуете.",
+                  "content": "Смысловое противоречие, которое видно без всякой экспертизы, плюс вопрос о правах на иллюстрации.",
                   "lineHeight": 1.55,
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
@@ -1820,7 +1834,7 @@
         },
         {
           "type": "frame",
-          "id": "w9aVg",
+          "id": "yfqHh",
           "name": "Раздел — Что уже закрыто",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1833,7 +1847,7 @@
           "children": [
             {
               "type": "text",
-              "id": "K9T3yD",
+              "id": "uff8J",
               "fill": "#7bd88f",
               "content": "Что уже закрыто",
               "fontFamily": "Literata",
@@ -1842,11 +1856,11 @@
             },
             {
               "type": "text",
-              "id": "ucVOD",
+              "id": "arvD6",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Форма записи на пробный урок — прямое требование задания, есть.\nМобильная версия — прямое требование, есть.\nОбъём больше минимального: «как проходит урок», отзывы, подвал — вы показали умение собирать структуру продающей страницы.",
+              "content": "Диагноз проблемы есть: сравнение тарифов вынесено вверх, ровно туда, где заявлена боль «не понимают, за что платят».\nПорог входа назван прямо на первом экране.\nОбъяснение решения написано и опирается на источники, а не на вкус.\nМетрики проверки страницы названы количественно и качественно.\nПривилегии разложены по трём осям, а не свалены в список.\nЦелевое действие есть и продублировано.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1856,7 +1870,7 @@
         },
         {
           "type": "frame",
-          "id": "Z51EoS",
+          "id": "JWEUI",
           "name": "Раздел — Чего не хватает",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1869,7 +1883,7 @@
           "children": [
             {
               "type": "text",
-              "id": "X6c5jD",
+              "id": "m04JGx",
               "fill": "#e8e6ee",
               "content": "Чего не хватает",
               "fontFamily": "Literata",
@@ -1878,11 +1892,11 @@
             },
             {
               "type": "text",
-              "id": "S0oIww",
+              "id": "yoveN",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "1. Пояснительной записки нет, а тестовое оценивают в первую очередь по объяснению решений. М2\n2. Расхождение с формулировкой «один экран» никак не объяснено. М5\n3. Состояний формы нет: ошибка, отправлено, сбой. М5\n4. Не показано, что вы смотрели конкурентов, хотя задание прямо на них ссылалось. М1\n5. Макет не подготовлен к передаче разработчику: сетка, компоненты, названные слои. М9\n6. Не заявлены брейкпоинты, на которых рисовали. М9\n7. Тексты и контент отзывов: рыба вместо настоящих формулировок. М1\n8. Условия неоплачиваемого тестового не зафиксированы: права на макет и что будет после оценки. М7",
+              "content": "1. Юридическая проходимость: «81% идей в плюсе», комиссии и «от 8 млн» без сносок и дисклеймеров. М4\n2. Мобильная версия только первым экраном. М5\n3. Иллюстрации в узнаваемом стиле известного банка. М8\n4. Нет мудборда и объяснения происхождения визуального языка. М8\n5. Ресёрч конкурентов и аудит текущей страницы растворены в общем тексте, а не собраны артефактом. М3\n6. Форма заявки без состояний и без согласия на обработку персональных данных. М9\n7. Калькулятор дублирует блок сравнения тарифов и стоит после формы. М5\n8. Не показаны состояния и интерактив: табы, слайдеры, переключения. М9",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1892,7 +1906,7 @@
         },
         {
           "type": "frame",
-          "id": "NBnLf",
+          "id": "cyLrL",
           "name": "Раздел — Что дописать перед сдачей",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1905,7 +1919,7 @@
           "children": [
             {
               "type": "text",
-              "id": "j8BCv",
+              "id": "plNFu",
               "fill": "#e8e6ee",
               "content": "Что дописать перед сдачей",
               "fontFamily": "Literata",
@@ -1914,11 +1928,11 @@
             },
             {
               "type": "text",
-              "id": "K97uQ",
+              "id": "dCqXp",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Порядок по убыванию цены отказа.\n1. Вторая часть задания: разбор конкурентов и логика действий сотрудника второй линии. Половина задания, без неё дизайн не смотрят. 2–2,5 ч.\n2. Пояснительная записка на страницу: почему такая структура, что было альтернативой. 1 ч.\n3. Состояния формы: ошибка, отправлено, сбой. 1–1,5 ч.\nИтого 4–5 часов. Если остаётся вдвое меньше, делайте пункты 1 и 2: третий закрывается словами в записке.",
+              "content": "Порядок по убыванию цены отказа.\n1. Сноски и дисклеймеры к цифрам, согласие на обработку данных в форме. 1–1,5 ч.\n2. Таблица конкурентов и аудит текущей страницы отдельным артефактом с выводами. 2–3 ч.\n3. Мудборд с подписями: что именно взято и как отразилось в макете. 1,5–2 ч.\n4. Свои иллюстрации или отказ от них в пользу типографики. 1,5–2,5 ч.\nИтого 6–9 часов.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1928,7 +1942,7 @@
         },
         {
           "type": "frame",
-          "id": "XGsBu",
+          "id": "vo00T",
           "name": "Раздел — Как это прочтут",
           "width": "fill_container",
           "fill": "#17161c",
@@ -1941,7 +1955,7 @@
           "children": [
             {
               "type": "text",
-              "id": "dnfQs",
+              "id": "SM4Mt",
               "fill": "#e8e6ee",
               "content": "Как это прочтут",
               "fontFamily": "Literata",
@@ -1950,11 +1964,11 @@
             },
             {
               "type": "text",
-              "id": "TsDJm",
+              "id": "M1nSe",
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Первое впечатление сильное: страница собрана целиком, объяснение с источниками и метриками усилено, разделы видно. Сразу следом идёт провал: половина задания не сделана. Проверяющий увидит аккуратного исполнителя, который читает задание невнимательно, и это опаснее слабого макета.",
+              "content": "Сильная исследовательская часть и внятная логика страницы. Следом идут три вещи, которые в финансовой среде читаются как незнание правил: цифра доходности без сноски, форма без согласия на обработку данных, чужая айдентика. Впечатление получится «умный дизайнер, который пока не работал в регулируемой отрасли».",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
@@ -1979,7 +1993,7 @@
       "children": [
         {
           "type": "frame",
-          "id": "qbmhv",
+          "id": "A8SMCZ",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 16,
@@ -1991,21 +2005,21 @@
           "children": [
             {
               "type": "frame",
-              "id": "GBUuy",
+              "id": "tbRoZ",
               "width": "fill_container",
               "gap": 10,
               "alignItems": "center",
               "children": [
                 {
                   "type": "ellipse",
-                  "id": "A9PfqU",
+                  "id": "yBoul",
                   "fill": "#ff8a3d",
                   "width": 8,
                   "height": 8
                 },
                 {
                   "type": "text",
-                  "id": "f3CRV",
+                  "id": "wieCz",
                   "fill": "#9b98a8",
                   "content": "Разбираюсь в предметной области…",
                   "fontFamily": "Golos Text",
@@ -2014,15 +2028,15 @@
                 },
                 {
                   "type": "frame",
-                  "id": "MmAim",
+                  "id": "xNkcY",
                   "width": "fill_container",
                   "height": 1
                 },
                 {
                   "type": "text",
-                  "id": "n2b78",
+                  "id": "EBoYs",
                   "fill": "#9b98a8",
-                  "content": "00:47",
+                  "content": "02:41",
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -2031,32 +2045,32 @@
             },
             {
               "type": "rectangle",
-              "id": "UlMqf",
+              "id": "mhuOl",
               "fill": "#2a2833",
               "width": "fill_container",
               "height": 1
             },
             {
               "type": "frame",
-              "id": "N69FqU",
+              "id": "NyEQW",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 2,
               "children": [
                 {
                   "type": "frame",
-                  "id": "vDaaU",
+                  "id": "Pdook",
                   "width": "fill_container",
                   "cornerRadius": 4,
                   "padding": 4,
                   "children": [
                     {
                       "type": "text",
-                      "id": "gkW5N",
+                      "id": "A2XEO",
                       "fill": "#57545f",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Нужен редизайн главной страницы сервиса доставки.",
+                      "content": "Компания — инвестиционный брокер. Мы развиваем сайт под премиальный сегмент.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2066,18 +2080,18 @@
                 },
                 {
                   "type": "frame",
-                  "id": "M26a9",
+                  "id": "At3KN",
                   "width": "fill_container",
                   "cornerRadius": 4,
                   "padding": 4,
                   "children": [
                     {
                       "type": "text",
-                      "id": "C4oHv",
+                      "id": "N1w4h",
                       "fill": "#57545f",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Сроки обсудим.",
+                      "content": "Одна из услуг — «Персональный брокер»: сопровождение состоятельных клиентов.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2087,7 +2101,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "EDXc1",
+                  "id": "o1dk1n",
                   "width": "fill_container",
                   "fill": "#4a3d63",
                   "cornerRadius": 4,
@@ -2095,11 +2109,11 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "m6ADID",
+                      "id": "w4gb0",
                       "fill": "#e8e6ee",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Целевая аудитория — премиальный сегмент, люди, которые ценят время.",
+                      "content": "Клиенты не понимают, чем она отличается от обычного обслуживания и за что платят.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2109,18 +2123,18 @@
                 },
                 {
                   "type": "frame",
-                  "id": "JiXdv",
+                  "id": "WXAgZ",
                   "width": "fill_container",
                   "cornerRadius": 4,
                   "padding": 4,
                   "children": [
                     {
                       "type": "text",
-                      "id": "uxVbJ",
+                      "id": "qsbYA",
                       "fill": "#57545f",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Сделай красиво и современно, детали на твоё усмотрение.",
+                      "content": "Спроектировать страницу, которая объясняет ценность и доводит до действия.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2130,18 +2144,18 @@
                 },
                 {
                   "type": "frame",
-                  "id": "SlrtC",
+                  "id": "zfMkI",
                   "width": "fill_container",
                   "cornerRadius": 4,
                   "padding": 4,
                   "children": [
                     {
                       "type": "text",
-                      "id": "ikCaK",
+                      "id": "ZaHuu",
                       "fill": "#57545f",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Покажи главную, каталог и карточку товара.",
+                      "content": "Как именно устроить страницу — решать тебе.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2151,18 +2165,18 @@
                 },
                 {
                   "type": "frame",
-                  "id": "pDFMk",
+                  "id": "uxcxl",
                   "width": "fill_container",
                   "cornerRadius": 4,
                   "padding": 4,
                   "children": [
                     {
                       "type": "text",
-                      "id": "T4do1",
+                      "id": "cRwFe",
                       "fill": "#57545f",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Ожидаем свежий взгляд, но чтобы узнавался бренд.",
+                      "content": "Срок: 2 недели. Одно сильное решение важнее объёма.",
                       "lineHeight": 1.7,
                       "fontFamily": "Literata",
                       "fontSize": 15,
@@ -2174,26 +2188,26 @@
             },
             {
               "type": "frame",
-              "id": "VAwlD",
+              "id": "lWvHe",
               "width": "fill_container",
               "gap": 9,
               "children": [
                 {
                   "type": "text",
-                  "id": "AAPko",
+                  "id": "JnYjo",
                   "fill": "#ff8a3d",
-                  "content": "М4",
+                  "content": "М3",
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
                   "fontWeight": "600"
                 },
                 {
                   "type": "text",
-                  "id": "T2mAPU",
+                  "id": "irAvN",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Назван сегмент — проверят, знаете ли вы, как он живёт.",
+                  "content": "Названа проблема — ждут диагноз, а не только решение.",
                   "fontFamily": "Golos Text",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -2212,6 +2226,7 @@
       "name": "5 Механизмы и метки ",
       "clip": true,
       "width": 900,
+      "height": 1120,
       "fill": "#0f0f12",
       "layout": "vertical",
       "gap": 16,
@@ -2219,7 +2234,7 @@
       "children": [
         {
           "type": "frame",
-          "id": "cJ46U",
+          "id": "l0QsTh",
           "width": "fill_container",
           "fill": "#17161c",
           "cornerRadius": 14,
@@ -2231,7 +2246,7 @@
           "children": [
             {
               "type": "text",
-              "id": "bzyXA",
+              "id": "A18Fr",
               "fill": "#e8e6ee",
               "content": "Чего в брифе нет, но спросят",
               "fontFamily": "Literata",
@@ -2240,18 +2255,18 @@
             },
             {
               "type": "frame",
-              "id": "i66wFK",
+              "id": "Vfjxb",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
               "children": [
                 {
                   "type": "text",
-                  "id": "RwcAC",
+                  "id": "LuzHt",
                   "fill": "#e8e6ee",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "1. Разбор конкурентов отдельным артефактом с выводом.",
+                  "content": "1. Версия о причинах провала, до всякого макета.",
                   "lineHeight": 1.45,
                   "fontFamily": "Golos Text",
                   "fontSize": 15.5,
@@ -2259,11 +2274,11 @@
                 },
                 {
                   "type": "text",
-                  "id": "CylBR",
+                  "id": "m5ToT",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "«Ориентир — сайты конкурентов» — это не разрешение подсмотреть, а задача, которую заказчик считает частью работы и потому не расписал. Ждут таблицу: 5–7 школ, по каждой — оффер первого экрана, что обещают за пробный урок, сколько полей в форме.",
+                  "content": "В брифе есть блок «Проблема»: клиенты не понимают, за что платят. Значит ждут диагноз на 5–8 гипотез, почему так, и уже из него структуру страницы. Решение без диагноза читается как угадывание.",
                   "lineHeight": 1.6,
                   "fontFamily": "Golos Text",
                   "fontSize": 14.5,
@@ -2271,21 +2286,21 @@
                 },
                 {
                   "type": "frame",
-                  "id": "hXnbt",
+                  "id": "z6r6ST",
                   "gap": 8,
                   "children": [
                     {
                       "type": "frame",
-                      "id": "JpB1C",
+                      "id": "aaZAH",
                       "fill": "#4a3d63",
                       "cornerRadius": 6,
                       "padding": 5,
                       "children": [
                         {
                           "type": "text",
-                          "id": "A7sjM",
+                          "id": "ysJDn",
                           "fill": "#e8e6ee",
-                          "content": "М1",
+                          "content": "М3",
                           "fontFamily": "Golos Text",
                           "fontSize": 12.5,
                           "fontWeight": "600"
@@ -2294,7 +2309,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Z1WQ2",
+                      "id": "Uq8lj",
                       "cornerRadius": 6,
                       "stroke": "#7bd88f",
                       "strokeWidth": 1,
@@ -2302,7 +2317,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "QWLfe",
+                          "id": "gdgoH",
                           "fill": "#7bd88f",
                           "content": "надёжно",
                           "fontFamily": "Golos Text",
@@ -2317,18 +2332,18 @@
             },
             {
               "type": "frame",
-              "id": "mMsrE",
+              "id": "r1XJI",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 6,
               "children": [
                 {
                   "type": "text",
-                  "id": "mDrWI",
+                  "id": "dmiBY",
                   "fill": "#e8e6ee",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "2. Обоснование решений: почему такой оффер, такая палитра, такой порядок блоков.",
+                  "content": "2. Достоверность финансовых деталей.",
                   "lineHeight": 1.45,
                   "fontFamily": "Golos Text",
                   "fontSize": 15.5,
@@ -2336,11 +2351,11 @@
                 },
                 {
                   "type": "text",
-                  "id": "MLrgv",
+                  "id": "rOoKv",
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "«Дизайн на твой вкус» = оценивают ход мысли, потому что результат сравнить не с чем — эталона нет. Голый макет без записки на таком брифе проваливается даже будучи красивым.",
+                  "content": "Внебиржевые сделки, структурные продукты, статус квалифицированного инвестора, обязательные дисклеймеры. Ни одной выдуманной цифры доходности. Названный премиальный сегмент проверяют на фактическую достоверность.",
                   "lineHeight": 1.6,
                   "fontFamily": "Golos Text",
                   "fontSize": 14.5,
@@ -2348,173 +2363,19 @@
                 },
                 {
                   "type": "frame",
-                  "id": "a18Ei",
+                  "id": "a3fqw",
                   "gap": 8,
                   "children": [
                     {
                       "type": "frame",
-                      "id": "Wts39",
+                      "id": "UxqMI",
                       "fill": "#4a3d63",
                       "cornerRadius": 6,
                       "padding": 5,
                       "children": [
                         {
                           "type": "text",
-                          "id": "n1zv0y",
-                          "fill": "#e8e6ee",
-                          "content": "М2",
-                          "fontFamily": "Golos Text",
-                          "fontSize": 12.5,
-                          "fontWeight": "600"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "F1qaW",
-                      "cornerRadius": 6,
-                      "stroke": "#7bd88f",
-                      "strokeWidth": 1,
-                      "padding": 5,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "ebXtx",
-                          "fill": "#7bd88f",
-                          "content": "надёжно",
-                          "fontFamily": "Golos Text",
-                          "fontSize": 12.5,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "Fi0aI",
-              "width": "fill_container",
-              "layout": "vertical",
-              "gap": 6,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "XgFcE",
-                  "fill": "#e8e6ee",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "3. Состояния формы, а не только её «нулевой» вид.",
-                  "lineHeight": 1.45,
-                  "fontFamily": "Golos Text",
-                  "fontSize": 15.5,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "NYUtg",
-                  "fill": "#9b98a8",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Форма — единственный функциональный элемент в задании, значит проверять будут именно её: пустое поле, невалидный email, ошибка по каждому полю, состояние отправки, экран успеха, сбой отправки.",
-                  "lineHeight": 1.6,
-                  "fontFamily": "Golos Text",
-                  "fontSize": 14.5,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "frame",
-                  "id": "CV852",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "pcnnK",
-                      "fill": "#4a3d63",
-                      "cornerRadius": 6,
-                      "padding": 5,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "EEXlt",
-                          "fill": "#e8e6ee",
-                          "content": "М9",
-                          "fontFamily": "Golos Text",
-                          "fontSize": 12.5,
-                          "fontWeight": "600"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "Snyf4",
-                      "cornerRadius": 6,
-                      "stroke": "#ff8a3d",
-                      "strokeWidth": 1,
-                      "padding": 5,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "sOmyG",
-                          "fill": "#ff8a3d",
-                          "content": "нашёл",
-                          "fontFamily": "Golos Text",
-                          "fontSize": 12.5,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "aVCZe",
-              "width": "fill_container",
-              "layout": "vertical",
-              "gap": 6,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "iN1Cy",
-                  "fill": "#e8e6ee",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "4. Чекбокс согласия на обработку персональных данных.",
-                  "lineHeight": 1.45,
-                  "fontFamily": "Golos Text",
-                  "fontSize": 15.5,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "V18eyF",
-                  "fill": "#9b98a8",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "Форма собирает имя, телефон или email — на российских сайтах согласие оформляют отдельным чекбоксом со ссылкой на политику; отсутствие нарушает 152-ФЗ.",
-                  "lineHeight": 1.6,
-                  "fontFamily": "Golos Text",
-                  "fontSize": 14.5,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "frame",
-                  "id": "WpgT0",
-                  "gap": 8,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "Y74iI5",
-                      "fill": "#4a3d63",
-                      "cornerRadius": 6,
-                      "padding": 5,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "TDt9W",
+                          "id": "xHdSS",
                           "fill": "#e8e6ee",
                           "content": "М4",
                           "fontFamily": "Golos Text",
@@ -2525,7 +2386,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "eU39J",
+                      "id": "D3M4S",
                       "cornerRadius": 6,
                       "stroke": "#ff8a3d",
                       "strokeWidth": 1,
@@ -2533,9 +2394,163 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "I6SQaj",
+                          "id": "tQTzp",
                           "fill": "#ff8a3d",
                           "content": "нашёл",
+                          "fontFamily": "Golos Text",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uTlQv",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GJr7X",
+                  "fill": "#e8e6ee",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "3. Аудит того, что есть сейчас, с выводами.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 15.5,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "qoODF",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Не пересказ чужих страниц, а таблица на 5–6 игроков и разбор текущей страницы заказчика, внизу 3–5 выводов, прямо влияющих на структуру.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14.5,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "u1oqQ",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nvMyh",
+                      "fill": "#4a3d63",
+                      "cornerRadius": 6,
+                      "padding": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xtNdd",
+                          "fill": "#e8e6ee",
+                          "content": "М3",
+                          "fontFamily": "Golos Text",
+                          "fontSize": 12.5,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dYN4t",
+                      "cornerRadius": 6,
+                      "stroke": "#7bd88f",
+                      "strokeWidth": 1,
+                      "padding": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "S9rO7",
+                          "fill": "#7bd88f",
+                          "content": "надёжно",
+                          "fontFamily": "Golos Text",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vMY1z",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "V2qnZA",
+                  "fill": "#e8e6ee",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "4. Происхождение визуального решения.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 15.5,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "s6sCpV",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Раз стиль отдан дизайнеру, спросят, откуда он взялся: мудборд с подписями, что именно взято, и видимая связь с итогом. Заимствованный узнаваемый стиль читается как отсутствие своего решения.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14.5,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "Wtny3",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fxl6A",
+                      "fill": "#4a3d63",
+                      "cornerRadius": 6,
+                      "padding": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UAkwf",
+                          "fill": "#e8e6ee",
+                          "content": "М8",
+                          "fontFamily": "Golos Text",
+                          "fontSize": 12.5,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QvMlo",
+                      "cornerRadius": 6,
+                      "stroke": "#7bd88f",
+                      "strokeWidth": 1,
+                      "padding": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zenaA",
+                          "fill": "#7bd88f",
+                          "content": "надёжно",
                           "fontFamily": "Golos Text",
                           "fontSize": 12.5,
                           "fontWeight": "normal"
