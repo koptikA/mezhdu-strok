@@ -1,0 +1,2033 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "riHXX",
+      "x": 0,
+      "y": 0,
+      "name": "4 — Главный экран · lunaris",
+      "clip": true,
+      "width": 900,
+      "fill": "#0f0f12",
+      "layout": "vertical",
+      "gap": 26,
+      "padding": 56,
+      "children": [
+        {
+          "type": "frame",
+          "id": "a9sgq",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "ebYeV",
+              "fill": "#e8e6ee",
+              "content": "Между строк",
+              "fontFamily": "Literata",
+              "fontSize": 44,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "JqVfK",
+              "fill": "#9b98a8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Тестовое, ТЗ или задание от работодателя. Человек не пишет того, что для него очевидно — покажу, чего в тексте нет, но по чему будут судить.",
+              "lineHeight": 1.5,
+              "fontFamily": "Golos Text",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "P1s534",
+          "name": "Карточка",
+          "clip": true,
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 16,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wYaah",
+              "name": "Режимы",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "L9w3vD",
+                  "width": "fill_container",
+                  "fill": "#1e1c26",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "olcOG",
+                      "fill": "#e8e6ee",
+                      "content": "Разобрать задание",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Dszes",
+                      "fill": "#9b98a8",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "что от вас хотят на самом деле и во сколько часов обойдётся",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Golos Text",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "RrFat",
+                      "fill": "#ff8a3d",
+                      "width": "fill_container",
+                      "height": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "l89Dz",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GVCWg",
+                      "fill": "#9b98a8",
+                      "content": "Проверить мою работу",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "oTJMF",
+                      "fill": "#9b98a8",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "работа готова — покажу, за что срежут",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Golos Text",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "isnfF",
+              "name": "Тело",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zs6Bq",
+                  "name": "Блок — Задание",
+                  "width": "fill_container",
+                  "fill": "#1e1c26",
+                  "cornerRadius": 12,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 15,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RCd4E",
+                      "fill": "#e8e6ee",
+                      "content": "Задание",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "E2OVv",
+                      "fill": "#9b98a8",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Целиком и дословно: тестовое, ТЗ, письмо от работодателя. Можно ссылкой.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dE6Cn",
+                      "width": "fill_container",
+                      "height": 140,
+                      "fill": "#0f0f12",
+                      "cornerRadius": 10,
+                      "stroke": "#2a2833",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "padding": 13,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "h0Yc3",
+                          "fill": "#9b98a8",
+                          "content": "Вставьте задание целиком — или ссылку на него",
+                          "fontFamily": "Golos Text",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iTZpp",
+                      "width": "fill_container",
+                      "cornerRadius": 10,
+                      "stroke": "#2a2833",
+                      "strokeWidth": 1,
+                      "gap": 10,
+                      "padding": 9,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RTQID",
+                          "fill": "#4a3d63",
+                          "cornerRadius": 8,
+                          "padding": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LBlri",
+                              "fill": "#e8e6ee",
+                              "content": "Прикрепить",
+                              "fontFamily": "Golos Text",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "tW73f",
+                          "fill": "#9b98a8",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Перетащите сюда или прикрепите: PDF, снимок экрана.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "Golos Text",
+                          "fontSize": 12.5,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ae466",
+                  "name": "Frame 1",
+                  "width": 748,
+                  "height": "fit_content(324)",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rARXJ",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Njkyx",
+                          "name": "Блок — Сайт компании",
+                          "width": "fill_container",
+                          "fill": "#17161c",
+                          "cornerRadius": 12,
+                          "stroke": "#2a2833",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 15,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "t7vBK",
+                              "fill": "#e8e6ee",
+                              "content": "Сайт компании",
+                              "fontFamily": "Golos Text",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y9mrGa",
+                              "fill": "#9b98a8",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Открою и посмотрю, что у них считается нормой.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "Golos Text",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "yOSMH",
+                              "width": "fill_container",
+                              "height": 44,
+                              "fill": "#0f0f12",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "layout": "vertical",
+                              "padding": 13,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Zge2W",
+                                  "fill": "#9b98a8",
+                                  "content": "https://company.ru",
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 15,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Y6Oiqu",
+                          "name": "Блок — Вакансия",
+                          "width": "fill_container",
+                          "fill": "#17161c",
+                          "cornerRadius": 12,
+                          "stroke": "#2a2833",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 15,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vXWFd",
+                              "fill": "#e8e6ee",
+                              "content": "Вакансия",
+                              "fontFamily": "Golos Text",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zsvSJ",
+                              "fill": "#9b98a8",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "По ней видно, что будут проверять заданием.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "Golos Text",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "C5H95m",
+                              "width": "fill_container",
+                              "height": 44,
+                              "fill": "#0f0f12",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "layout": "vertical",
+                              "padding": 13,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "a6mMIo",
+                                  "fill": "#9b98a8",
+                                  "content": "Текст вакансии или ссылка",
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 15,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "m4xLOT",
+                              "width": "fill_container",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "gap": 10,
+                              "padding": 9,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "m5VpN4",
+                                  "fill": "#4a3d63",
+                                  "cornerRadius": 8,
+                                  "padding": 8,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "sHKn5",
+                                      "fill": "#e8e6ee",
+                                      "content": "Прикрепить",
+                                      "fontFamily": "Golos Text",
+                                      "fontSize": 13,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "w5giHS",
+                                  "fill": "#9b98a8",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Или файлом.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gTmTR",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Usi6S",
+                          "name": "Блок — О вас и о сроке",
+                          "width": "fill_container",
+                          "fill": "#17161c",
+                          "cornerRadius": 12,
+                          "stroke": "#2a2833",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 15,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Jgrxq",
+                              "fill": "#e8e6ee",
+                              "content": "О вас и о сроке",
+                              "fontFamily": "Golos Text",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "IksGF",
+                              "fill": "#9b98a8",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Ваши слова о профессии важнее найденного в сети.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "Golos Text",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "FcPhp",
+                              "width": "fill_container",
+                              "height": 44,
+                              "fill": "#0f0f12",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "layout": "vertical",
+                              "padding": 13,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "njRYY",
+                                  "fill": "#9b98a8",
+                                  "content": "продуктовый дизайнер",
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 15,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ArVHm",
+                              "name": "Поле срока",
+                              "width": "fill_container",
+                              "height": 44,
+                              "fill": "#0f0f12",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "layout": "vertical",
+                              "padding": 13,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xzRJP",
+                                  "fill": "#57545f",
+                                  "content": "срок: неделя",
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 15,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pEgFn",
+                          "name": "Блок — Моё резюме",
+                          "width": "fill_container",
+                          "fill": "#17161c",
+                          "cornerRadius": 12,
+                          "stroke": "#2a2833",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 15,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "L5fSZ",
+                              "fill": "#e8e6ee",
+                              "content": "Моё резюме",
+                              "fontFamily": "Golos Text",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PLyA4",
+                              "fill": "#9b98a8",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Чего в нём нет из ожидаемого — то и проверят.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "Golos Text",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jU9q4",
+                              "width": "fill_container",
+                              "cornerRadius": 10,
+                              "stroke": "#2a2833",
+                              "strokeWidth": 1,
+                              "gap": 10,
+                              "padding": 9,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "qEt4J",
+                                  "fill": "#4a3d63",
+                                  "cornerRadius": 8,
+                                  "padding": 8,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "zNZaw",
+                                      "fill": "#e8e6ee",
+                                      "content": "Прикрепить",
+                                      "fontFamily": "Golos Text",
+                                      "fontSize": 13,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "i8Ur2w",
+                                  "fill": "#9b98a8",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "PDF или снимок экрана.",
+                                  "lineHeight": 1.4,
+                                  "fontFamily": "Golos Text",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SeHwu",
+                  "width": "fill_container",
+                  "fill": "#ff8a3d",
+                  "cornerRadius": 10,
+                  "padding": 16,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "q6F0T",
+                      "fill": "#1a1206",
+                      "content": "Разобрать",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 17,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "uTtyF",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Идёт 1–3 минуты: читаю задание, при незнакомой профессии сначала выясняю её нормы.",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ySgPN",
+      "x": 1960,
+      "y": 0,
+      "name": "5 — Выдача после разбора · lunaris",
+      "clip": true,
+      "width": 900,
+      "fill": "#0f0f12",
+      "layout": "vertical",
+      "gap": 16,
+      "padding": 56,
+      "children": [
+        {
+          "type": "frame",
+          "id": "o9XljO",
+          "name": "Шкала",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "E8KEoO",
+              "fill": "#e8e6ee",
+              "content": "Сколько это часов работы",
+              "fontFamily": "Literata",
+              "fontSize": 19,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "fA3qt",
+              "name": "Строка — Нужно на работу",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g6iDp7",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XI7Mg",
+                      "fill": "#9b98a8",
+                      "content": "Нужно на работу",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kTGFI",
+                      "fill": "#e8e6ee",
+                      "content": "34–46 ч",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "buGfH",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 20,
+                  "fill": "#0f0f12",
+                  "cornerRadius": 6,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "sYBhq",
+                      "fill": "#ff8a3d",
+                      "width": 510,
+                      "height": "fill_container"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "qPrc6",
+                      "opacity": 0.4,
+                      "fill": "#ff8a3d",
+                      "width": 180,
+                      "height": "fill_container"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vMzjF",
+              "name": "Строка — Есть в сроке",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BnoXT",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "VC4d1",
+                      "fill": "#9b98a8",
+                      "content": "Есть в сроке",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13.5,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bsmW3",
+                      "fill": "#e8e6ee",
+                      "content": "30 ч",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Wmx9g",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 20,
+                  "fill": "#0f0f12",
+                  "cornerRadius": 6,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "MznyX",
+                      "fill": "#4a3d63",
+                      "width": 450,
+                      "height": "fill_container"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yvR16",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "a38mX",
+                  "fill": "#9b98a8",
+                  "content": "Не хватает",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "X1j62L",
+                  "fill": "#f0745a",
+                  "content": "4–16 часов",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "whRGA",
+          "name": "Плитки",
+          "width": "fill_container",
+          "height": 114,
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "KxwOE",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ju9in",
+                  "fill": "#e8e6ee",
+                  "content": "34–46",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "UyUnu",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "часов работы",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CB8LI",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bMrUh",
+                  "fill": "#e8e6ee",
+                  "content": "30",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "eGpWJ",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "часов в сроке",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xCFH0",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oz96J",
+                  "fill": "#e8e6ee",
+                  "content": "4",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "lpZy1",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "невысказанных требования",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ukuju",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KTOhp",
+                  "fill": "#ff8a3d",
+                  "content": "3",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "KciwP",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "красных флага",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KQOAL",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Du23N",
+                  "fill": "#e8e6ee",
+                  "content": "5",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "H0wFa",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "вопросов до старта",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "c8X7J",
+          "width": "fill_container",
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "SEFjG",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JA8JD",
+                  "fill": "#9b98a8",
+                  "content": "Стоит ли браться",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zloqi",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wrHIY",
+                  "fill": "#9b98a8",
+                  "content": "Что просят буквально",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JHr9D",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Hnd4q",
+                  "fill": "#9b98a8",
+                  "content": "Чего в брифе нет, но спросят",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IChgO",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Q5yKR5",
+                  "fill": "#9b98a8",
+                  "content": "Как это будут оценивать",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BgPZr",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hLDXp",
+                  "fill": "#9b98a8",
+                  "content": "Красные флаги",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uqL13",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IzR0R",
+                  "fill": "#9b98a8",
+                  "content": "Что спросить до старта",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FalFN",
+              "name": "Чип",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "orHGZ",
+                  "fill": "#9b98a8",
+                  "content": "Что сдавать",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WXwJN",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "WTqta",
+              "fill": "#e8e6ee",
+              "content": "Стоит ли браться",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "jtvpE",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Разведка конкурентов 4–6 ч, структура 6–8 ч, макеты 14–20 ч, состояния и адаптив 6–8 ч, подача 4 ч. Итого 34–46 часов. При сроке в неделю и параллельной работе это не влезает.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Mhspo",
+          "name": "Раздел — Что просят буквально",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "fEisl",
+              "fill": "#e8e6ee",
+              "content": "Что просят буквально",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "SEtbZ",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Один экран лендинга. Форма записи на пробный урок. Адаптив под телефон. Ориентир — сайты конкурентов.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "c0C5D",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "K0BnY",
+              "fill": "#e8e6ee",
+              "content": "Чего в брифе нет, но спросят",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "oZCA8",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Объяснить выбор структуры — М2 · «на твой вкус» значит, что судить будут ход мысли.\nПоказать состояния формы — М5 · форма названа прямо, она и есть предмет проверки.\nТаблица конкурентов с выводом — М3 · сбор без вывода не засчитывается.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FrOnG",
+          "name": "Раздел — Как это будут оценивать",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "bXlKx",
+              "fill": "#e8e6ee",
+              "content": "Как это будут оценивать",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "w9M2On",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Смотреть будет дизайнер, а не маркетолог: связность решения важнее красоты отдельных блоков. Проверят, объяснено ли, почему блоки идут в таком порядке.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Oe8Rx",
+          "name": "Раздел — Красные флаги",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "AJIt7",
+              "fill": "#f0745a",
+              "content": "Красные флаги",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "tjt94",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Тестовая неоплачиваемая работа на реальном продукте школы. Объём соответствует спринту команды, а не пробной задаче. Ни одной точки обратной связи по дороге.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MOI5F",
+          "name": "Раздел — Что спросить до старта",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "Kl66p",
+              "fill": "#e8e6ee",
+              "content": "Что спросить до старта",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "d8Nlig",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Кто будет смотреть работу и по каким критериям вы её примете?\nНужны ли состояния формы или достаточно основного экрана?\nОтдавать макетом в Figma или PDF?",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "u5V6d",
+          "name": "Раздел — Что сдавать",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "fPoHz",
+              "fill": "#e8e6ee",
+              "content": "Что сдавать",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "FnCp4",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Макет главного экрана, записка с объяснением решений, таблица конкурентов с выводом.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "q7cZ2",
+      "x": 2940,
+      "y": 0,
+      "name": "6 — Проверка работы · lunaris",
+      "clip": true,
+      "width": 900,
+      "fill": "#0f0f12",
+      "layout": "vertical",
+      "gap": 16,
+      "padding": 56,
+      "children": [
+        {
+          "type": "frame",
+          "id": "sO9M5",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "FFOTW",
+              "fill": "#e8e6ee",
+              "content": "Насколько работа закрывает ожидания",
+              "fontFamily": "Literata",
+              "fontSize": 19,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "l6KnI8",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WVeUC",
+                  "fill": "#9b98a8",
+                  "content": "Закрыто 7 из 11. Вердикт:",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lr1ix",
+                  "fill": "#ff8a3d",
+                  "content": "дорабатывать",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MhmQj",
+              "clip": true,
+              "width": "fill_container",
+              "height": 34,
+              "fill": "#0f0f12",
+              "cornerRadius": 8,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "RAYn9",
+                  "name": "Закрыто",
+                  "fill": "#4a3d63",
+                  "width": 480,
+                  "height": "fill_container"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bKSQw",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p374J",
+                  "fill": "#9b98a8",
+                  "content": "0",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "MELWf",
+                  "fill": "#9b98a8",
+                  "content": "11 ожиданий",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xcvmS",
+          "width": "fill_container",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Q0wfgn",
+              "width": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AJKUf",
+                  "fill": "#e8e6ee",
+                  "content": "7 из 11",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "oo0Tz",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "ожиданий закрыто",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qz2Qq",
+              "width": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iihsV",
+                  "fill": "#e8e6ee",
+                  "content": "4",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "pmryk",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "чего не хватает",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Wl1jl",
+              "width": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "T0IDI",
+                  "fill": "#ff8a3d",
+                  "content": "1",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "ZHBD2",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "за что срежут",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wxZUG",
+              "width": "fill_container",
+              "fill": "#17161c",
+              "cornerRadius": 12,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "F5BDp1",
+                  "fill": "#e8e6ee",
+                  "content": "8",
+                  "fontFamily": "Literata",
+                  "fontSize": 28,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "mAe6j",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "часов на доработку",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Golos Text",
+                  "fontSize": 12.5,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U0qPX1",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "RHilw",
+              "fill": "#7bd88f",
+              "content": "Что уже закрыто",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "XoHL6",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Структура экрана собрана, форма записи на месте. Адаптив под телефон есть. Тон текстов совпадает с сайтом школы.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "H93aE",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "TlcRN",
+              "fill": "#e8e6ee",
+              "content": "Чего не хватает",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "QQZar",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Нет объяснения решений — М2 · принимающий ищет ход мысли, а не только картинку.\nНет состояний формы: ошибка и отправлено — М5.\nНет таблицы конкурентов с выводом — М3.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Gg4ye",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "lXEFZ",
+              "fill": "#f0745a",
+              "content": "За что срежут первым делом",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "V2NCN9",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Отсутствие пояснительной записки: работу смотрит дизайнер и первым делом ищет, почему блоки идут в таком порядке.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "XUudr",
+      "x": 980,
+      "y": 0,
+      "name": "7 — Ожидание · lunaris",
+      "clip": true,
+      "width": 900,
+      "fill": "#0f0f12",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 56,
+      "children": [
+        {
+          "type": "frame",
+          "id": "qbmhv",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 16,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "GBUuy",
+              "width": "fill_container",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "A9PfqU",
+                  "fill": "#ff8a3d",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "text",
+                  "id": "f3CRV",
+                  "fill": "#9b98a8",
+                  "content": "Разбираюсь в предметной области…",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "MmAim",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "n2b78",
+                  "fill": "#9b98a8",
+                  "content": "00:47",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "UlMqf",
+              "fill": "#2a2833",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "N69FqU",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 2,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vDaaU",
+                  "width": "fill_container",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gkW5N",
+                      "fill": "#57545f",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Нужен редизайн главной страницы сервиса доставки.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "M26a9",
+                  "width": "fill_container",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "C4oHv",
+                      "fill": "#57545f",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Сроки обсудим.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EDXc1",
+                  "width": "fill_container",
+                  "fill": "#4a3d63",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "m6ADID",
+                      "fill": "#e8e6ee",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Целевая аудитория — премиальный сегмент, люди, которые ценят время.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JiXdv",
+                  "width": "fill_container",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uxVbJ",
+                      "fill": "#57545f",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Сделай красиво и современно, детали на твоё усмотрение.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SlrtC",
+                  "width": "fill_container",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ikCaK",
+                      "fill": "#57545f",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Покажи главную, каталог и карточку товара.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pDFMk",
+                  "width": "fill_container",
+                  "cornerRadius": 4,
+                  "padding": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "T4do1",
+                      "fill": "#57545f",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Ожидаем свежий взгляд, но чтобы узнавался бренд.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Literata",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VAwlD",
+              "width": "fill_container",
+              "gap": 9,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AAPko",
+                  "fill": "#ff8a3d",
+                  "content": "М4",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "T2mAPU",
+                  "fill": "#9b98a8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Назван сегмент — проверят, знаете ли вы, как он живёт.",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fileToken": "fa9eeabd-e389-418f-b4c9-2653b9315e1b"
+}

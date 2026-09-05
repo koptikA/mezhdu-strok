@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Между строк — проверка на реальном отказе</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#0f0f12;--ink:#e8e6ee;--muted:#9b98a8;--line:#2a2833;--card:#17161c;--accent:#ff8a3d;--ok:#7bd88f;--bad:#f0745a;--part:#e3a94f;color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 "Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:40px 22px 88px}
+  .back{display:inline-block;margin-bottom:26px;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--accent)}
+  .again{display:inline-block;margin-top:32px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .again:hover{color:var(--accent)}
+  h1{font-family:Literata,Georgia,serif;font-size:44px;font-weight:600;line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:60ch;margin:0 0 40px}
+  h2{font-family:Literata,Georgia,serif;font-size:22px;font-weight:600;margin:48px 0 14px;padding-top:20px;border-top:1px solid var(--line)}
+  .brief{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+  .brief h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:18px 0 4px;font-weight:600}
+  .brief h3:first-child{margin-top:0}
+  .brief p{margin:0}
+  .score{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}
+  .score div{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .score b{display:block;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+  .score span{font-size:13px;color:var(--muted)}
+  .pair{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:12px}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;margin-bottom:12px}
+  .t-точно{color:var(--ok);background:rgba(123,216,143,.14)}
+  .t-частично{color:var(--part);background:rgba(227,169,79,.14)}
+  .t-мимо{color:var(--bad);background:rgba(240,116,90,.14)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .cols h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 6px;font-weight:600}
+  .cols p{margin:0;font-size:15px}
+  .cols .said{color:var(--ink)}
+  .method{color:var(--muted);font-size:14px;max-width:66ch}
+  .foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;max-width:66ch}
+  @media(max-width:640px){.cols{grid-template-columns:1fr;gap:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← Между строк: разобрать своё задание</a>
+  <h1>Проверка на реальном отказе</h1>
+  <p class="lede">Дизайнер выполнила тестовое задание, вложилась всерьёз — исследование, конкуренты, научные статьи, калькулятор тарифа — и получила отказ. В брифе было четыре предложения. В письме с отказом — одиннадцать претензий, и <b>ни одной из них в задании не было</b>.<br><br>«Между строк» получил только бриф. Письмо ему не показывали.</p>
+
+  <div class="score" id="score"></div>
+
+  <h2>Что было в задании</h2>
+  <div class="brief" id="brief"></div>
+
+  <h2>Что предсказало приложение и что написал заказчик</h2>
+  <div id="pairs"></div>
+
+  <h2>Как проверяли</h2>
+  <p class="method">Разбор выполнял отдельный агент, у которого был доступ ровно к двум файлам: методике и тексту брифа. Письмо с отказом ему не показывали — иначе он подогнал бы ответ и не заметил этого. Ключ проверки собран из письма заранее, дословными цитатами.</p>
+
+  <p class="foot">Бриф и письмо — из тестового задания, которое автор выложила публично сама. Имя и компания здесь не называются. Приложение выдаёт версии, а не приговор: заказчик может думать иначе.</p>
+</div>
+
+<script src="data.js"></script>
+<script>
+const C = window.CASE;
+const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+const n = (k) => C.rows.filter((r) => r.hit === k).length;
+document.getElementById("score").innerHTML = [
+  [n("точно"), "точных попаданий"],
+  [n("частично"), "задето частично"],
+  [n("мимо"), "не увидел"],
+  [C.rows.length, "претензий в отказе"],
+].map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
+
+document.getElementById("brief").innerHTML = C.brief.blocks
+  .map(([h, p]) => `<h3>${esc(h)}</h3><p>${esc(p)}</p>`).join("");
+
+document.getElementById("pairs").innerHTML = C.rows.map((r) => `
+  <div class="pair">
+    <span class="tag t-${r.hit}">${r.hit}</span>
+    <div class="cols">
+      <div><h4>Приложение сказало заранее</h4><p>${esc(r.predicted)}</p></div>
+      <div><h4>Заказчик написал в отказе</h4><p class="said">${esc(r.actual)}</p></div>
+    </div>
+  </div>`).join("");
+</script>
+</body>
+</html>

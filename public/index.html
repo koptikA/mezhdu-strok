@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Между строк</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#0f0f12;--ink:#e8e6ee;--muted:#9b98a8;--line:#2a2833;--card:#17161c;--field:#1e1c26;
+    --accent:#ff8a3d;--accent-ink:#1a1206;--accent-soft:#3a3050;--purple:#4a3d63;
+    --placeholder:#57545f;--ok:#7bd88f;--bad:#f0745a;--shadow:none;
+    color-scheme:dark
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 "Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:64px 22px 88px}
+
+  h1{font-family:Literata,Georgia,serif;font-size:47px;font-weight:600;line-height:1.06;margin:0 0 16px;letter-spacing:-.02em}
+  .lede{font-size:19px;color:var(--muted);margin:0 0 36px;max-width:46ch}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .modes{display:flex;border-bottom:1px solid var(--line)}
+  .modes button{flex:1;font:inherit;text-align:left;padding:16px 20px;background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:var(--muted)}
+  .modes button:hover{background:var(--field)}
+  .modes button[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--accent);background:var(--card)}
+  .modes b{display:block;font-weight:600;font-size:16px;margin-bottom:2px}
+  .modes span{font-size:12.5px;line-height:1.4;display:block}
+
+  .body{padding:20px}
+  .block{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin:0 0 12px;background:var(--card)}
+  .block>h2{margin:0 0 3px;font-size:15px;font-weight:600}
+  .block>p{margin:0 0 10px;font-size:13px;line-height:1.45;color:var(--muted)}
+  .block.wide{background:var(--paper)}
+  .block.over{border-color:var(--accent);background:var(--accent-soft)}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;align-items:start}
+  .pair .block{margin:0}
+  /* колонка: блоки прижаты друг к другу, не выравниваются по соседней колонке */
+  .col{display:flex;flex-direction:column;gap:12px}
+
+  textarea,input[type=text],input[type=url]{width:100%;font:inherit;color:inherit;background:var(--field);border:1px solid var(--line);border-radius:10px;padding:12px 14px;transition:border-color .15s,background .15s}
+  .block.wide textarea{background:var(--field)}
+  textarea{min-height:170px;resize:vertical;line-height:1.55}
+  textarea.short{min-height:76px}
+  ::placeholder{color:var(--placeholder)}
+  textarea:focus,input:focus{outline:0;border-color:var(--ink)}
+
+  .drop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px;border:1px dashed var(--line);border-radius:10px;padding:9px 11px;transition:border-color .15s,background .15s}
+  .drop.over{border-color:var(--accent);background:var(--accent-soft)}
+  .pick{flex:none;font-size:13px;font-weight:500;background:var(--purple);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;transition:border-color .15s,color .15s}
+  .pick:hover{border-color:var(--ink)}
+  .drop em{font-style:normal;font-size:12.5px;color:var(--muted);flex:1;min-width:130px}
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 0;padding:0;width:100%}
+  .chips li{display:flex;align-items:center;gap:5px;font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 5px 4px 11px}
+  .chips button{border:0;background:none;font:inherit;font-size:15px;line-height:1;color:var(--muted);cursor:pointer;padding:0 5px;border-radius:999px}
+  .chips button:hover{color:var(--accent)}
+
+  #go{width:100%;margin-top:4px;padding:16px;font:inherit;font-size:17px;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;cursor:pointer;transition:background .15s,filter .15s}
+  #go:hover{filter:brightness(1.1)}
+  #go[disabled]{opacity:.4;cursor:default}
+  .hint{margin:10px 2px 0;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}
+
+  .status{display:none;align-items:center;gap:10px;margin:24px 0 0;color:var(--muted);font-size:14px}
+  .status.on{display:flex}
+  .status #clock{margin-left:auto;font-variant-numeric:tabular-nums}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:p 1.1s ease-in-out infinite;flex:none}
+  @keyframes p{0%,100%{opacity:.25}50%{opacity:1}}
+  .err{display:none;margin-top:20px;padding:14px 16px;border:1px solid var(--bad);border-radius:10px;background:#2a1f1c}
+  .err.on{display:block}
+
+  /* ожидание — просвечивание твоего же текста, а не спиннер */
+  .body.working .block,.body.working .pair,.body.working #go,.body.working .hint{display:none}
+  .body.working .status{margin-top:2px}
+  #desk{display:none;position:relative;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+  #desk.on{display:block}
+  #lines{position:relative;max-height:250px;overflow:hidden;scroll-behavior:smooth;font-family:Literata,Georgia,serif;font-size:15px;line-height:1.72;color:var(--placeholder);
+    -webkit-mask-image:linear-gradient(transparent,#000 14%,#000 84%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 84%,transparent)}
+  #lines .ln{padding:1px 6px;border-radius:4px;transition:color .45s,background .45s}
+  #lines .ln.lit{color:var(--ink);background:var(--accent-soft)}
+  #note{display:flex;gap:9px;align-items:baseline;min-height:42px;margin:14px 0 0;font-size:14px;color:var(--muted)}
+  #note b{flex:none;font-weight:600;color:var(--accent)}
+  #note span{animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}}
+
+  /* шкала: объём работы или закрытые ожидания */
+  #gauge{display:none;margin:32px 0 0;padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  #gauge.on{display:block}
+  #gauge h2{font-family:Literata,Georgia,serif;font-size:19px;font-weight:600;margin:0 0 3px}
+  #gauge .verdict{font-size:14px;color:var(--muted);margin:0 0 16px}
+  #gauge .verdict b{color:var(--ink);font-weight:600}
+  #gauge .verdict b.tight{color:#e3a94f}
+  #gauge .verdict b.bad{color:var(--bad)}
+  #gauge .verdict b.good{color:var(--ok)}
+  #gauge-rows{margin:14px 0 16px}
+  .row{margin:0 0 14px}
+  .row:last-child{margin-bottom:0}
+  .row-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 5px}
+  .row-label{font-size:13px;color:var(--muted)}
+  .row-num{font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .bar{position:relative;height:34px;border-radius:8px;background:var(--accent-soft);border:1px solid var(--line);overflow:hidden}
+  .bar .fill{position:absolute;top:0;bottom:0;background:var(--accent);opacity:.25;transition:left .6s,width .6s}
+  .bar .seg{position:absolute;top:0;bottom:0;transition:left .6s,width .6s}
+  .bar .seg.lo{left:0;background:var(--accent)}
+  .bar .seg.hi{background:var(--accent);opacity:.4}
+  .bar .seg.avail{left:0;background:var(--purple)}
+  .ticks{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .ticks[hidden],.legend[hidden]{display:none}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}
+  .legend i{font-style:normal;display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .legend .w{background:var(--accent-soft);border:1px solid var(--accent)}
+
+  /* плитки: главные числа разбора, в одном блоке со шкалой */
+  #tiles{display:none;grid-template-columns:repeat(auto-fit,minmax(min(130px,100%),1fr));gap:10px;margin:12px 0 0}
+  #tiles.on{display:grid}
+  #gauge:not(.on)+#tiles{margin-top:32px}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+  .tile b{display:block;font-family:Literata,Georgia,serif;font-size:28px;font-weight:600;line-height:1.1;
+    letter-spacing:-.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+  .tile.hot b{color:var(--accent)}
+  .tile span{display:block;margin-top:5px;font-size:12.5px;line-height:1.35;color:var(--muted);overflow-wrap:anywhere}
+
+  /* дашборд проверки готовой работы: вердикт + сетка ожиданий + топ рисков,
+     до всех разделов — заменяет собой старую шкалу «закрыто N из M» и плитки */
+  #dash{display:none;margin:32px 0 0}
+  #dash.on{display:block}
+  #dash-verdict{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+  #dash-verdict-word{font-family:Literata,Georgia,serif;font-size:34px;font-weight:600;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+  #dash-verdict-word[hidden]{display:none}
+  #dash-verdict-word.bad{color:var(--bad)}
+  #dash-verdict-word.tight{color:#e3a94f}
+  #dash-verdict-word.good{color:var(--ok)}
+  #dash-verdict-sub{margin-top:7px;font-size:14.5px;color:var(--muted)}
+  #dash-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  #dash-grid i{width:17px;height:17px;border-radius:4px;background:var(--line);flex:none}
+  #dash-grid i.done{background:var(--ok)}
+  #dash-risks[hidden]{display:none}
+  #dash-risks{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+  #dash-risks h3{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--muted)}
+  #dash-risks ol{margin:0;padding-left:20px}
+  #dash-risks li{font-size:17.5px;font-weight:600;line-height:1.4;margin-bottom:12px}
+  #dash-risks li:last-child{margin-bottom:0}
+  #dash-risks li span{display:block;margin-top:3px;font-size:14px;font-weight:400;color:var(--muted)}
+
+  /* выдача по разделам */
+  #toc{display:none;flex-wrap:wrap;gap:8px;margin:26px 0 0}
+  #toc.on{display:flex}
+  #toc a{font-size:13.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px}
+  #toc a:hover{color:var(--ink);border-color:var(--ink)}
+  #out{margin-top:14px}
+  #out:empty{display:none}
+  .sec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 22px 18px;margin:14px 0;scroll-margin-top:14px}
+  .sec>h2{font-family:Literata,Georgia,serif;font-size:22px;font-weight:600;line-height:1.2;margin:18px 0 10px}
+  .sec h3{font-size:16px;margin:20px 0 6px}
+  .sec p,.sec li{font-size:15.5px}
+  .sec table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0;display:block;overflow-x:auto}
+  .sec th,.sec td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  .sec th{background:var(--field);font-weight:600}
+  .sec code{background:var(--field);padding:1px 5px;border-radius:4px;font-size:.9em}
+  .sec blockquote{margin:14px 0;padding:2px 0 2px 15px;border-left:2px solid var(--line);color:var(--muted)}
+  .sec a{color:var(--accent)}
+  .sec ul{padding-left:20px}
+
+  .proof{margin-top:44px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+  .proof h2{font-family:Literata,Georgia,serif;font-size:21px;font-weight:600;margin:0 0 8px}
+  .proof p{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .proof .nums{display:flex;gap:24px;flex-wrap:wrap;margin:0 0 16px}
+  .proof .nums div{font-size:13px;color:var(--muted)}
+  .proof .nums b{display:block;font-family:Literata,Georgia,serif;font-size:26px;color:var(--ink);line-height:1.1}
+  .proof a{display:inline-block;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .proof a:hover{color:var(--accent)}
+
+  .foot{margin-top:40px;color:var(--muted);font-size:13.5px;line-height:1.55}
+  @media(prefers-reduced-motion:reduce){#note span,.bar .fill,.bar .seg{animation:none;transition:none}}
+  @media(max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:40px 16px 64px}
+    h1{font-size:33px}
+    .lede{font-size:17px}
+    .pair{grid-template-columns:1fr}
+    #tiles.on{grid-template-columns:1fr}
+    #dash-verdict-word{font-size:26px}
+    #dash-risks li{font-size:16px}
+    .modes{flex-direction:column}
+    .modes button{border-bottom:1px solid var(--line);border-left:2px solid transparent}
+    .modes button[aria-pressed=true]{border-bottom-color:var(--line);border-left-color:var(--accent)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Между строк</h1>
+  <p class="lede">Тестовое, ТЗ или задание от работодателя. Человек не пишет того, что для него очевидно — <b>покажу, чего в тексте нет, но по чему будут судить</b>.</p>
+
+  <div class="card">
+    <div class="modes">
+      <button id="m-analyze" aria-pressed="true"><b>Разобрать задание</b><span>что от вас хотят на самом деле, во сколько часов обойдётся и о чём спросить до старта</span></button>
+      <button id="m-review" aria-pressed="false"><b>Проверить мою работу</b><span>работа готова — покажу, за что срежут, пока ещё можно поправить</span></button>
+    </div>
+
+    <div class="body">
+      <div class="block wide">
+        <h2>Задание</h2>
+        <p>Целиком и дословно: тестовое, ТЗ, письмо от работодателя. Можно ссылкой.</p>
+        <textarea id="text" placeholder="Вставьте задание целиком — или ссылку на него"></textarea>
+        <div class="drop" data-role="task">
+          <label class="pick">Прикрепить<input type="file" hidden multiple></label>
+          <em>Перетащите сюда или прикрепите: PDF, снимок экрана. Word и Figma — экспортом в PDF.</em>
+          <ul class="chips"></ul>
+        </div>
+      </div>
+
+      <div class="block wide" id="work-block" hidden>
+        <h2>Моя работа</h2>
+        <p>То, что вы собираетесь сдать: макеты, документ, ссылка на прототип. Проверю по тому, что видно.</p>
+        <textarea id="workText" class="short" placeholder="Ссылка на работу или короткое описание того, что сделано"></textarea>
+        <div class="drop" data-role="work">
+          <label class="pick">Прикрепить<input type="file" hidden multiple></label>
+          <em>Перетащите сюда или прикрепите: экспорт макетов в PDF, снимки экрана.</em>
+          <ul class="chips"></ul>
+        </div>
+      </div>
+
+      <div class="pair">
+        <div class="col">
+          <div class="block">
+            <h2>Сайт компании</h2>
+            <p>Открою и посмотрю, как они пишут и что у них считается нормой.</p>
+            <input type="url" id="company" placeholder="https://company.ru">
+          </div>
+          <div class="block">
+            <h2>Вакансия</h2>
+            <p>По ней видно, что именно будут проверять заданием.</p>
+            <textarea id="vacancy" class="short" placeholder="Текст вакансии или ссылка"></textarea>
+            <div class="drop" data-role="vacancy">
+              <label class="pick">Прикрепить<input type="file" hidden multiple></label>
+              <em>Перетащите сюда или прикрепите файлом.</em>
+              <ul class="chips"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="block">
+            <h2>О вас и о сроке</h2>
+            <p>Ваши слова о профессии важнее всего, что я найду в интернете.</p>
+            <input type="text" id="prof" placeholder="продуктовый дизайнер">
+            <input type="text" id="deadline" placeholder="срок: неделя" style="margin-top:9px">
+          </div>
+          <div class="block">
+            <h2>Моё резюме</h2>
+            <p>Чего в нём нет из ожидаемого — то и проверят пристальнее.</p>
+            <div class="drop" data-role="cv">
+              <label class="pick">Прикрепить<input type="file" hidden multiple></label>
+              <em>Перетащите сюда или прикрепите: PDF или снимок экрана.</em>
+              <ul class="chips"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="go">Разобрать</button>
+      <p class="hint">Идёт 1–3 минуты: читаю задание, при незнакомой профессии сначала выясняю её нормы. Страницу не закрывать.</p>
+
+      <div class="status" id="status"><span class="dot"></span><span id="status-text">Читаю…</span><span id="clock"></span></div>
+
+      <div id="desk">
+        <div id="lines"></div>
+        <p id="note"><b></b><span></span></p>
+      </div>
+
+      <div class="err" id="err"></div>
+    </div>
+  </div>
+
+  <div id="dash">
+    <div id="dash-verdict">
+      <div id="dash-verdict-word" hidden></div>
+      <div id="dash-verdict-sub"></div>
+    </div>
+    <div id="dash-grid" aria-hidden="true"></div>
+    <div id="dash-risks" hidden>
+      <h3>За что срежут первым делом</h3>
+      <ol id="dash-risks-list"></ol>
+    </div>
+  </div>
+
+  <div id="gauge">
+    <h2 id="gauge-title">Объём работы</h2>
+    <div id="gauge-rows" hidden>
+      <div class="row">
+        <div class="row-head"><span class="row-label">Нужно на работу</span><span class="row-num" id="gauge-num-work"></span></div>
+        <div class="bar"><span class="seg lo" id="gauge-fill-lo"></span><span class="seg hi" id="gauge-fill-hi"></span></div>
+      </div>
+      <div class="row" id="gauge-row-due" hidden>
+        <div class="row-head"><span class="row-label">Есть в сроке</span><span class="row-num" id="gauge-num-due"></span></div>
+        <div class="bar"><span class="seg avail" id="gauge-fill-due"></span></div>
+      </div>
+    </div>
+    <p class="verdict" id="gauge-verdict"></p>
+    <div class="bar" id="gauge-bar-review"><span class="fill" id="gauge-fill"></span></div>
+    <div class="ticks" id="gauge-ticks"></div>
+    <div class="legend" id="gauge-legend"></div>
+  </div>
+
+  <div id="tiles"></div>
+
+  <nav id="toc"></nav>
+  <div id="out"></div>
+
+  <section class="proof">
+    <h2>Откуда известно, что оно угадывает</h2>
+    <p>Приложение разобрало чужое тестовое задание, не видя, чем дело кончилось. Потом сравнили с настоящим письмом-отказом, которое пришло автору работы.</p>
+    <div class="nums">
+      <div><b>8 из 11</b>претензий названы заранее</div>
+      <div><b>2</b>реальных отказа проверено</div>
+      <div><b>0</b>подсказок разбирающему</div>
+    </div>
+    <a href="/case/">Посмотреть сверку целиком →</a>
+  </section>
+
+  <p class="foot">Разбор — версия, а не приговор: решение всегда за вами. Каждый пункт помечен «надёжно», «нашёл» со ссылкой или «проверь сам».</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/14.1.3/marked.min.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+let mode = "analyze";
+
+for (const m of ["analyze", "review"]) {
+  $("m-" + m).onclick = () => {
+    mode = m;
+    $("m-analyze").setAttribute("aria-pressed", String(m === "analyze"));
+    $("m-review").setAttribute("aria-pressed", String(m === "review"));
+    $("work-block").hidden = m !== "review";
+    $("go").textContent = m === "review" ? "Проверить работу" : "Разобрать";
+  };
+}
+
+const MAX_FILES = 8;
+const MAX_BYTES = 3 * 1024 * 1024;
+let files = [];
+
+const fail = (msg) => {
+  $("err").textContent = msg;
+  $("err").className = "err on";
+  $("err").scrollIntoView({ block: "nearest", behavior: "smooth" });
+};
+
+const esc = (s) => String(s).replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" })[c]);
+
+const drawChips = () => {
+  for (const zone of document.querySelectorAll(".drop")) {
+    zone.querySelector(".chips").innerHTML = files
+      .map((f, i) => [f, i])
+      .filter(([f]) => f.role === zone.dataset.role)
+      .map(([f, i]) => `<li>${esc(f.name)} · ${Math.max(1, Math.round(f.size / 1024))} КБ<button data-i="${i}" title="Убрать файл">×</button></li>`)
+      .join("");
+  }
+  for (const b of document.querySelectorAll(".chips button")) {
+    b.onclick = () => { files.splice(+b.dataset.i, 1); drawChips(); };
+  }
+};
+
+// Читаются только эти типы. Остальное объясняем словами: молча отсеянный
+// файл выглядит как «прикрепление не работает».
+const READABLE = ["application/pdf", "image/png", "image/jpeg", "image/gif", "image/webp",
+  "text/plain", "text/markdown", "text/csv"];
+
+const addFiles = async (list, role) => {
+  for (const file of list) {
+    if (files.length >= MAX_FILES) return fail(`Файлов сразу не больше ${MAX_FILES}.`);
+    if (!READABLE.includes(file.type)) {
+      const ext = file.name.split(".").pop().toLowerCase();
+      const how = {
+        fig: "Figma: File → Export → PDF или снимок экрана",
+        sketch: "Сохраните в PDF или снимите экраном",
+        psd: "Сохраните в PNG или PDF",
+        ai: "Сохраните в PDF",
+        doc: "Сохраните в PDF", docx: "Сохраните в PDF",
+        xls: "Сохраните в PDF", xlsx: "Сохраните в PDF",
+        ppt: "Сохраните в PDF", pptx: "Сохраните в PDF",
+        pages: "Сохраните в PDF", key: "Сохраните в PDF",
+        heic: "Поделитесь как JPEG — на айфоне это «Параметры → Наиболее совместимый»",
+        heif: "Поделитесь как JPEG",
+        zip: "Приложите файлы по отдельности", rar: "Приложите файлы по отдельности",
+      }[ext];
+      return fail(`Файл «${file.name}» я прочитать не смогу. ${how ?? "Подойдут PDF, PNG, JPG, GIF, WEBP и текстовые файлы"}.`);
+    }
+    if (files.reduce((s, f) => s + f.size, 0) + file.size > MAX_BYTES) {
+      return fail("Вместе файлы тяжелее 3 МБ. Уберите лишние страницы или сожмите картинки.");
+    }
+    const data = await new Promise((ok, no) => {
+      const r = new FileReader();
+      r.onload = () => ok(String(r.result).split(",")[1]);
+      r.onerror = () => no(new Error(`файл «${file.name}» не прочитался`));
+      r.readAsDataURL(file);
+    }).catch((e) => { fail("Не получилось: " + e.message); return null; });
+    if (data === null) return;
+    files.push({ name: file.name, type: file.type, size: file.size, data, role });
+  }
+  drawChips();
+};
+
+for (const zone of document.querySelectorAll(".drop")) {
+  const role = zone.dataset.role;
+  zone.querySelector("input[type=file]").onchange = (e) => { addFiles([...e.target.files], role); e.target.value = ""; };
+  for (const [ev, on] of [["dragover", true], ["dragleave", false], ["drop", false]]) {
+    zone.addEventListener(ev, (e) => {
+      e.preventDefault();
+      zone.classList.toggle("over", on);
+      if (ev === "drop") addFiles([...e.dataTransfer.files], role);
+    });
+  }
+}
+
+// Полоска узкая, а тащат обычно на карточку целиком — заголовок, описание,
+// поле ввода. Зоной приёма делаем весь блок; полоска внутри остаётся как есть.
+for (const block of document.querySelectorAll(".block")) {
+  const drop = block.querySelector(".drop");
+  if (!drop) continue;
+  for (const [ev, on] of [["dragover", true], ["dragleave", false], ["drop", false]]) {
+    block.addEventListener(ev, (e) => {
+      e.preventDefault();
+      block.classList.toggle("over", on);
+      if (ev === "drop" && !e.target.closest(".drop")) addFiles([...e.dataTransfer.files], drop.dataset.role);
+    });
+  }
+}
+
+// Мимо всех блоков (или блок без своей зоны, вроде «О вас и о сроке») —
+// не даём браузеру открыть файл вместо прикрепления.
+document.addEventListener("dragover", (e) => e.preventDefault());
+document.addEventListener("drop", (e) => {
+  e.preventDefault();
+  if (!e.target.closest(".block")?.querySelector(".drop")) {
+    fail("Перетащите файл в блок, к которому он относится: задание, вакансия, резюме или ваша работа.");
+  }
+});
+
+// Пока идёт разбор — показываем на его же тексте, по чему приложение смотрит.
+const MECH = [
+  ["М2", "«Решать вам» значит, что судить будут ход мысли, а не картинку.", /усмотрени|решать вам|решать теб|как считаешь|на ваш вкус|свобод|креатив/i],
+  ["М3", "Названа проблема — ждут диагноз, а не только решение.", /проблем|не работает|падает|низк|конверси|жалу|тер[яе]ем/i],
+  ["М4", "Назван сегмент — проверят, знаете ли вы, как он живёт.", /аудитори|сегмент|премиальн|целев|пользовател|клиент/i],
+  ["М5", "Что здесь перечислено, то и есть границы работы.", /покажи|включ|состав|список|экран|страниц|карточк|каталог|раздел/i],
+  ["М6", "Название роли тянет за собой артефакты, которых не назвали.", /дизайнер|разработчик|аналитик|маркетолог|менеджер|копирайтер|редактор/i],
+  ["М7", "Рамок нет — значит проверяют приоритеты.", /срок|обсудим|дедлайн|как можно|объ[её]м|сколько/i],
+  ["М8", "У визуального решения спросят происхождение: почему так, а не иначе.", /референс|стил|цвет|шрифт|красив|современн|бренд|макет|модно/i],
+  ["М9", "Принимать будет коллега по ремеслу, а не абстрактный «заказчик».", /жд[её]м|ожидаем|оцен|презент|защит|прислать/i],
+  ["М1", "Что заказчику очевидно, в текст не попадает. Ищу такие места.", null],
+];
+
+let timers = [];
+
+const startWaiting = () => {
+  const src = $("text").value.trim() || files.map((f) => f.name).join("\n");
+  const rows = src.split(/\n+/)
+    .flatMap((l) => (l.length > 110 ? l.match(/[\s\S]{1,110}(\s|$)/g) || [l] : [l]))
+    .map((l) => l.trim()).filter(Boolean).slice(0, 80);
+  $("lines").innerHTML = rows.map((l) => `<div class="ln">${esc(l)}</div>`).join("");
+  $("desk").className = "on";
+  document.querySelector(".body").classList.add("working");
+
+  // Строка и пометка идут парой: чтение с карандашом, а не спиннер.
+  const lines = [...$("lines").children];
+  const pairs = lines
+    .map((el, k) => [el, MECH.find((n) => n[2]?.test(rows[k]))])
+    .filter(([, n]) => n);
+  const seq = pairs.length >= 3 ? pairs : lines.map((el, k) => [el, MECH[k % MECH.length]]);
+  if (!seq.length) return;
+
+  let i = 0;
+  const step = () => {
+    const [el, [tag, txt]] = seq[i++ % seq.length];
+    for (const l of lines) l.classList.remove("lit");
+    el.classList.add("lit");
+    $("lines").scrollTop = Math.max(0, el.offsetTop - 105);
+    $("note").innerHTML = `<b>${tag}</b><span>${txt}</span>`;
+  };
+  step();
+  timers.push(setInterval(step, 2400));
+};
+
+const stopWaiting = () => {
+  for (const t of timers) clearInterval(t);
+  timers = [];
+  $("desk").className = "";
+  document.querySelector(".body").classList.remove("working");
+};
+
+// Служебная первая строка ответа: часы и срок либо закрытые ожидания.
+const readMeta = (md) => {
+  const m = md.match(/<!--\s*((?:часы|закрыто)[^>]*?)-->/);
+  if (!m) return null;
+  const meta = {};
+  for (const pair of m[1].split(";")) {
+    const [k, v] = pair.split(":").map((s) => s?.trim());
+    if (k) meta[k] = v ?? "";
+  }
+  return meta;
+};
+
+const nums = (v) => String(v ?? "").match(/\d+/g)?.map(Number) ?? null;
+
+// "34" -> "34", [34,46] -> "34–46": диапазон схлопывается в одно число сам,
+// когда границы совпали (например у "не хватает", если верх и низ разошлись
+// с доступным временем на одинаковую величину).
+const range = (lo, hi) => (lo === hi ? `${lo}` : `${lo}–${hi}`);
+
+const drawGauge = (meta) => {
+  // Гасим на каждом разборе и зажигаем заново: иначе ответ без служебной
+  // строки оставил бы на экране числа предыдущего.
+  $("gauge").className = "";
+  $("gauge-rows").hidden = true;
+  $("gauge-row-due").hidden = true;
+  if (!meta) return;
+  const verdict = meta["вердикт"] ?? "";
+  const cls = /не влезает|переделывать/.test(verdict) ? "bad"
+    : /впритык|дорабатывать/.test(verdict) ? "tight" : "good";
+  const said = verdict ? ` Вердикт: <b class="${cls}">${esc(verdict)}</b>` : "";
+
+  if (meta["закрыто"] !== undefined) {
+    const done = nums(meta["закрыто"])?.[0] ?? 0;
+    const all = Math.max(done, nums(meta["всего"])?.[0] ?? done, 1);
+    $("gauge-bar-review").hidden = false;
+    $("gauge-ticks").hidden = false;
+    $("gauge-legend").hidden = false;
+    $("gauge-verdict").hidden = false;
+    $("gauge-title").textContent = "Насколько работа закрывает ожидания";
+    $("gauge-verdict").innerHTML = `Закрыто ${done} из ${all}.${said}`;
+    $("gauge-fill").style.left = "0";
+    $("gauge-fill").style.width = (done / all) * 100 + "%";
+    $("gauge-ticks").innerHTML = `<span>0</span><span>${all} ожиданий</span>`;
+    $("gauge-legend").innerHTML = `<span><i class="w"></i>закрыто работой</span>`;
+    $("gauge").className = "on";
+    return;
+  }
+
+  const hours = nums(meta["часы"]);
+  if (!hours) return;
+  const [lo, hi = lo] = hours;
+  const due = nums(meta["срок"])?.[0] ?? null;
+  // Общая шкала для обеих полос: 100% — большее из "нужно" и "есть", без
+  // технического запаса и округления, которые раньше делали правый край
+  // шкалы бессмысленным числом.
+  const max = Math.max(hi, due ?? 0, 1);
+
+  $("gauge-bar-review").hidden = true;
+  $("gauge-ticks").hidden = true;
+  $("gauge-legend").hidden = true;
+  $("gauge-rows").hidden = false;
+  $("gauge-title").textContent = "Сколько это часов работы";
+  $("gauge-num-work").textContent = `${range(lo, hi)} ч`;
+  $("gauge-fill-lo").style.width = (lo / max) * 100 + "%";
+  $("gauge-fill-hi").style.left = (lo / max) * 100 + "%";
+  $("gauge-fill-hi").style.width = (hi > lo ? ((hi - lo) / max) * 100 : 0) + "%";
+
+  if (due !== null) {
+    $("gauge-row-due").hidden = false;
+    $("gauge-num-due").textContent = `${due} ч`;
+    $("gauge-fill-due").style.width = Math.min(100, (due / max) * 100) + "%";
+  }
+
+  if (due === null) {
+    // Срок не назван — про доступное время ничего не выдумываем.
+    $("gauge-verdict").hidden = true;
+  } else if (hi > due) {
+    const shortLo = lo - due, shortHi = hi - due;
+    $("gauge-verdict").hidden = false;
+    $("gauge-verdict").innerHTML = shortLo > 0
+      ? `<b class="${cls}">Не хватает ${range(shortLo, shortHi)} часов</b>`
+      : `<b class="${cls}">Не хватает до ${shortHi} часов</b>`;
+  } else {
+    $("gauge-verdict").hidden = false;
+    $("gauge-verdict").innerHTML = `<b class="${cls}">Влезает, остаётся ${due - hi} часов</b>`;
+  }
+  $("gauge").className = "on";
+};
+
+// Плитки считаются из уже пришедшего текста: второго запроса к модели за теми же
+// числами быть не должно — он стоил бы столько же, сколько сам разбор.
+const secOf = (chunks, re) => {
+  const c = chunks.find((x) => re.test(x.match(/^##\s+(.+)$/m)?.[1] ?? ""));
+  return c === undefined ? null : c.replace(/^##\s+.+\n?/m, "").trim();
+};
+
+// Пункт раздела — подзаголовок, строка таблицы или элемент списка: что нашлось
+// первым. Считать всё подряд нельзя — в таблице заголовок не пункт, а под ###
+// лежат свои же абзацы.
+const countItems = (body) => {
+  const heads = body.match(/^###\s+\S/gm);
+  if (heads) return heads.length;
+  const rows = (body.match(/^\s*\|.+\|\s*$/gm) ?? []).filter((r) => !/^[\s|:-]+$/.test(r));
+  if (rows.length > 1) return rows.length - 1;
+  // Маркированный или нумерованный пункт верхнего уровня; тот же список
+  // бывает внутри цитаты («> 1.», «> -») — маркер цитаты перед ним не в счёт,
+  // а вступление и подпись цитаты без номера/маркера так не совпадают.
+  const list = body.match(/^\s{0,3}(?:>\s*)?(?:[-*+]|\d+[.)])\s+\S/gm);
+  if (list) return list.length;
+  // Модель иногда нумерует пункты жирным абзацем вместо списка: «**1. …**»,
+  // каждый — отдельным абзацем через пустую строку.
+  const bold = body.match(/^\s{0,3}\*\*\d+\.\s/gm);
+  if (bold) return bold.length;
+  return 0;
+};
+
+const dash = (lo, hi) => (hi === undefined || hi === lo ? String(lo) : lo + "–" + hi);
+
+// «2–3 ч», «4 часа», «6 часов», «1,5 ч» — числа при «ч», дробь через запятую
+// или точку. Границу слова приходится писать руками: в \w нет кириллицы, и
+// \b после «ч» не работает.
+const HOUR_NUM = () => /(\d+(?:[.,]\d+)?)(?:\s*[–—-]\s*(\d+(?:[.,]\d+)?))?\s*ч(?:ас[а-яё]*)?(?![а-яё])/gi;
+
+// Целое — без дробной части, дробное — один знак после запятой и по-русски.
+const fmtHours = (n) => {
+  const r = Math.round(n * 10) / 10;
+  return Number.isInteger(r) ? String(r) : r.toFixed(1).replace(".", ",");
+};
+
+// «Всего 4–5 часов» — модель уже сложила часы по пунктам, повторное сложение
+// пунктов поверх неё удваивает счёт. Если такая строка есть — берём числа
+// только из неё; иначе складываем часы каждого пункта (нижние с нижними,
+// верхние с верхними). Минуты («30 мин») не считаем и не переводим.
+const hoursIn = (body) => {
+  const sum = (text) => {
+    let lo = 0, hi = 0, found = false;
+    for (const m of text.matchAll(HOUR_NUM())) {
+      found = true;
+      const a = +m[1].replace(",", ".");
+      lo += a;
+      hi += m[2] !== undefined ? +m[2].replace(",", ".") : a;
+    }
+    return found ? [lo, hi] : null;
+  };
+  // \b не работает на кириллице (см. выше) — граница слова руками.
+  const totalLine = body.match(/^.*(?<![а-яё])(?:всего|итого|суммарно)(?![а-яё]).*$/im)?.[0];
+  const r = (totalLine && sum(totalLine)) || sum(body);
+  if (!r) return null;
+  const [lo, hi] = r;
+  return lo === hi ? fmtHours(lo) : `${fmtHours(lo)}–${fmtHours(hi)}`;
+};
+
+// 1 требование, 2–4 требования, 5–20 требований; 11–14 всегда последняя форма.
+const plural = (n, forms) =>
+  forms[n % 10 === 1 && n % 100 !== 11 ? 0
+    : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : 2];
+
+// Строка — подпись как есть; тройка — формы «один · два · пять».
+const LABEL = {
+  "часы": "часов работы",
+  "срок": "часов в сроке",
+  "требования": ["невысказанное требование", "невысказанных требования", "невысказанных требований"],
+  "флаги": ["красный флаг", "красных флага", "красных флагов"],
+  "вопросы": ["вопрос до старта", "вопроса до старта", "вопросов до старта"],
+  "закрыто": "ожиданий закрыто",
+  "нехватка": "чего не хватает",
+  "срежут": "за что срежут",
+  "доработка": ["час на доработку", "часа на доработку", "часов на доработку"],
+};
+const HOT = new Set(["флаги", "срежут"]);
+
+const tilesFor = (meta, chunks) => {
+  const out = [];
+  // Диапазон «7–8» склоняется по последнему числу: столько же, сколько скажет вслух человек.
+  const add = (k, v) => {
+    if (v === null || v === undefined) return;
+    const val = String(v);
+    const label = LABEL[k];
+    out.push([k, val, typeof label === "string" ? label : plural(+val.match(/\d+/g).pop(), label)]);
+  };
+  // Раздела нет или он пуст — плитки нет вовсе. Есть текст, но пунктов в нём
+  // не видно — значит пункт один, абзацем. Ноль остаётся только там, где он
+  // сам по себе ответ: «красных флагов нет» — это результат, а не пропуск.
+  const count = (re, none = 1) => {
+    const body = secOf(chunks, re);
+    if (!body) return null;
+    return countItems(body) || none;
+  };
+
+  if (meta?.["закрыто"] !== undefined) {
+    const done = nums(meta["закрыто"])?.[0];
+    const all = nums(meta["всего"])?.[0];
+    if (done !== undefined) add("закрыто", all === undefined ? done : `${done} из ${all}`);
+    add("нехватка", count(/чего не хватает/i));
+    add("срежут", count(/срежут первым делом/i));
+    const fix = secOf(chunks, /что дописать перед сдачей/i);
+    add("доработка", fix ? hoursIn(fix) : null);
+    return out;
+  }
+
+  const h = nums(meta?.["часы"]);
+  if (h) add("часы", dash(h[0], h[1]));
+  add("срок", nums(meta?.["срок"])?.[0]);
+  add("требования", count(/в брифе нет/i));
+  add("флаги", count(/красные флаг/i, 0));
+  add("вопросы", count(/спросить до старта/i));
+  return out;
+};
+
+// Плитки правятся на месте, а не перерисовываются: innerHTML на каждый кусок
+// стрима заставил бы числа мигать.
+const drawTiles = (meta, chunks) => {
+  const want = tilesFor(meta, chunks);
+  const box = $("tiles");
+  const keep = new Set();
+  for (const [k, val, label] of want) {
+    keep.add(k);
+    let el = box.querySelector(`[data-k="${k}"]`);
+    if (!el) {
+      el = document.createElement("div");
+      el.dataset.k = k;
+      el.innerHTML = "<b></b><span></span>";
+      box.append(el);
+    }
+    const cls = "tile" + (HOT.has(k) && val !== "0" ? " hot" : "");
+    if (el.className !== cls) el.className = cls;
+    if (el.firstChild.textContent !== val) el.firstChild.textContent = val;
+    if (el.lastChild.textContent !== label) el.lastChild.textContent = label;
+  }
+  for (const el of [...box.children]) if (!keep.has(el.dataset.k)) el.remove();
+  box.className = want.length ? "on" : "";
+};
+
+// Ответ приходит разделами со своими заголовками — раскладываем по карточкам.
+const render = (md) => {
+  const meta = readMeta(md);
+  drawGauge(meta);
+  const body = md.replace(/<!--[\s\S]*?(?:-->|$)/g, "").trim();
+  const chunks = body.split(/\n(?=##\s)/).filter((c) => c.trim());
+  drawTiles(meta, chunks);
+  const titles = [];
+  $("out").innerHTML = chunks
+    .map((chunk, i) => {
+      const title = chunk.match(/^##\s+(.+)$/m)?.[1]?.trim();
+      if (title) titles.push([title, "sec" + i]);
+      return `<section class="sec" id="sec${i}">${marked.parse(chunk)}</section>`;
+    })
+    .join("");
+  $("toc").innerHTML = titles.map(([t, id]) => `<a href="#${id}">${esc(t)}</a>`).join("");
+  $("toc").className = titles.length > 1 ? "on" : "";
+};
+
+$("go").onclick = async () => {
+  const text = $("text").value.trim();
+  $("err").className = "err";
+  $("out").innerHTML = "";
+  $("toc").className = "";
+  $("gauge").className = "";
+  $("tiles").innerHTML = "";
+  $("tiles").className = "";
+
+  if (text.length < 40 && !files.some((f) => f.role === "task")) {
+    fail("Вставьте задание целиком или приложите его файлом.");
+    return;
+  }
+  if (mode === "review" && !$("workText").value.trim() && !files.some((f) => f.role === "work")) {
+    fail("Чтобы проверить работу, приложите её файлом или дайте ссылку.");
+    return;
+  }
+
+  $("go").disabled = true;
+  $("status").className = "status on";
+  $("status-text").textContent = "Читаю…";
+  startWaiting();
+
+  const started = Date.now();
+  const clock = setInterval(() => {
+    const s = Math.round((Date.now() - started) / 1000);
+    $("clock").textContent = `${String((s / 60) | 0).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
+  }, 1000);
+
+  let md = "";
+  try {
+    const r = await fetch("/api/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mode,
+        text,
+        company: $("company").value.trim(),
+        vacancy: $("vacancy").value.trim(),
+        workText: $("workText").value.trim(),
+        profession: $("prof").value,
+        deadline: $("deadline").value,
+        files: files.map(({ name, type, data, role }) => ({ name, type, data, role })),
+      }),
+    });
+    if (!r.ok && r.headers.get("content-type")?.includes("json")) {
+      throw new Error((await r.json()).error);
+    }
+
+    const reader = r.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "";
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      const chunks = buf.split("\n\n");
+      buf = chunks.pop();
+      for (const chunk of chunks) {
+        const ev = chunk.match(/^event: (.+)$/m)?.[1];
+        const dataLine = chunk.match(/^data: (.+)$/m)?.[1];
+        if (!ev || !dataLine) continue;
+        const d = JSON.parse(dataLine);
+        if (ev === "text") {
+          if (!md) stopWaiting();
+          md += d.t;
+          $("status-text").textContent = mode === "review" ? "Пишу проверку…" : "Пишу разбор…";
+          render(md);
+        } else if (ev === "status" && d.stage === "search") {
+          $("status-text").textContent = "Разбираюсь в предметной области…";
+        } else if (ev === "status" && d.stage === "fetch") {
+          $("status-text").textContent = "Открываю ссылку…";
+        } else if (ev === "thinking") {
+          $("status-text").textContent = "Думаю…";
+        } else if (ev === "error") {
+          throw new Error(d.error);
+        }
+      }
+    }
+    if (!md.trim()) throw new Error("Ответ пришёл пустой. Попробуйте ещё раз.");
+  } catch (e) {
+    $("err").textContent = md.trim()
+      ? "Разбор оборвался: " + e.message + " Часть выше уцелела."
+      : "Не получилось: " + e.message;
+    $("err").className = "err on";
+  } finally {
+    clearInterval(clock);
+    stopWaiting();
+    $("go").disabled = false;
+    $("status").className = "status";
+  }
+};
+</script>
+</body>
+</html>

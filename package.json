@@ -1,0 +1,10 @@
+{
+  "name": "mezhdu-strok",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Читает бриф, тестовое или сообщение и достаёт то, чего в тексте нет",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0"
+  }
+}
