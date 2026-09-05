@@ -115,6 +115,7 @@ cd mezhdu-strok
 npm install
 cp .env.example .env      # вписать свой ключ Anthropic
 node dev.mjs              # откроется на http://localhost:3000
+                          # при старте скажет, найден ключ или нет
 ```
 
 Ключ берётся на [console.anthropic.com](https://console.anthropic.com/settings/keys),

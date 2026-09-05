@@ -1,8 +1,16 @@
 // Локальный сервер: статика из public/ + та же функция, что на Vercel.
-// Запуск: node --env-file=.env dev.mjs  →  http://localhost:3000
+// Запуск: node dev.mjs  →  http://localhost:3000
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import handler from "./api/analyze.js";
+import { existsSync } from "node:fs";
+
+// .env читаем сами: забытый флаг --env-file выглядит как «ключ не подключён»,
+// хотя ключ лежит на месте. Флаг по-прежнему работает, просто больше не нужен.
+const envFile = new URL("./.env", import.meta.url);
+if (!process.env.ANTHROPIC_API_KEY && existsSync(envFile)) process.loadEnvFile(envFile);
+
+// Импорт после загрузки .env: обработчик создаёт клиента на старте модуля.
+const { default: handler } = await import("./api/analyze.js");
 
 const TYPES = { html: "text/html; charset=utf-8", js: "text/javascript; charset=utf-8", css: "text/css; charset=utf-8", svg: "image/svg+xml" };
 
@@ -38,4 +46,7 @@ createServer(async (req, res) => {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     res.end("Такой страницы нет");
   }
-}).listen(3000, () => console.log("Открой http://localhost:3000 — разбор идёт через настоящий API, каждый прогон ~$0.26"));
+}).listen(3000, () => {
+  const key = process.env.ANTHROPIC_API_KEY ? "ключ найден" : "КЛЮЧА НЕТ — впиши его в .env, иначе разбор не пойдёт";
+  console.log(`Открой http://localhost:3000 — ${key}. Каждый разбор ~$0.26`);
+});
