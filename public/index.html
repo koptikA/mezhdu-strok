@@ -116,7 +116,9 @@
   #tiles{display:none;grid-template-columns:repeat(auto-fit,minmax(min(130px,100%),1fr));gap:10px;margin:12px 0 0}
   #tiles.on{display:grid}
   #gauge:not(.on)+#tiles{margin-top:32px}
-  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+  /* плитки одной высоты: подпись прижата вниз, ряд ровный при любой длине текста */
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0;
+    display:flex;flex-direction:column;justify-content:space-between;gap:6px}
   .tile b{display:block;font-family:Literata,Georgia,serif;font-size:28px;font-weight:600;line-height:1.1;
     letter-spacing:-.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
   .tile.hot b{color:var(--accent)}
@@ -509,6 +511,11 @@ const nums = (v) => String(v ?? "").match(/\d+/g)?.map(Number) ?? null;
 // с доступным временем на одинаковую величину).
 const range = (lo, hi) => (lo === hi ? `${lo}` : `${lo}–${hi}`);
 
+// «дорабатывать»/«впритык» — жёлтый, «переделывать»/«не влезает» — красный,
+// иначе зелёный. Общая классификация вердикта для шкалы часов и для дашборда.
+const verdictClass = (v) => /не влезает|переделывать/.test(v) ? "bad"
+  : /впритык|дорабатывать/.test(v) ? "tight" : "good";
+
 const drawGauge = (meta) => {
   // Гасим на каждом разборе и зажигаем заново: иначе ответ без служебной
   // строки оставил бы на экране числа предыдущего.
@@ -517,26 +524,11 @@ const drawGauge = (meta) => {
   $("gauge-row-due").hidden = true;
   if (!meta) return;
   const verdict = meta["вердикт"] ?? "";
-  const cls = /не влезает|переделывать/.test(verdict) ? "bad"
-    : /впритык|дорабатывать/.test(verdict) ? "tight" : "good";
-  const said = verdict ? ` Вердикт: <b class="${cls}">${esc(verdict)}</b>` : "";
+  const cls = verdictClass(verdict);
 
-  if (meta["закрыто"] !== undefined) {
-    const done = nums(meta["закрыто"])?.[0] ?? 0;
-    const all = Math.max(done, nums(meta["всего"])?.[0] ?? done, 1);
-    $("gauge-bar-review").hidden = false;
-    $("gauge-ticks").hidden = false;
-    $("gauge-legend").hidden = false;
-    $("gauge-verdict").hidden = false;
-    $("gauge-title").textContent = "Насколько работа закрывает ожидания";
-    $("gauge-verdict").innerHTML = `Закрыто ${done} из ${all}.${said}`;
-    $("gauge-fill").style.left = "0";
-    $("gauge-fill").style.width = (done / all) * 100 + "%";
-    $("gauge-ticks").innerHTML = `<span>0</span><span>${all} ожиданий</span>`;
-    $("gauge-legend").innerHTML = `<span><i class="w"></i>закрыто работой</span>`;
-    $("gauge").className = "on";
-    return;
-  }
+  // Проверка готовой работы: дашборд (#dash) уже показывает вердикт крупно
+  // и закрытые ожидания сеткой — здесь для него рисовать больше нечего.
+  if (meta["закрыто"] !== undefined) return;
 
   const hours = nums(meta["часы"]);
   if (!hours) return;
@@ -606,6 +598,16 @@ const countItems = (body) => {
   return 0;
 };
 
+// «За что срежут» — нумерованный (или маркированный) список, каждый пункт
+// начинается жирным вступлением: «1. **Заголовок.** остальной текст». Берём
+// первые три, вступление — крупная строка дашборда, остальное — подпись.
+const topRisks = (chunks) => {
+  const body = secOf(chunks, /срежут первым делом/i);
+  if (!body) return [];
+  const items = [...body.matchAll(/^\s*(?:\d+[.)]|[-*+])\s+(?:\*\*(.+?)\*\*[:.]?\s*)?(.*)$/gm)];
+  return items.slice(0, 3).map((m) => [m[1]?.trim() || null, m[2].trim()]).filter(([h, r]) => h || r);
+};
+
 const dash = (lo, hi) => (hi === undefined || hi === lo ? String(lo) : lo + "–" + hi);
 
 // «2–3 ч», «4 часа», «6 часов», «1,5 ч» — числа при «ч», дробь через запятую
@@ -654,12 +656,8 @@ const LABEL = {
   "требования": ["невысказанное требование", "невысказанных требования", "невысказанных требований"],
   "флаги": ["красный флаг", "красных флага", "красных флагов"],
   "вопросы": ["вопрос до старта", "вопроса до старта", "вопросов до старта"],
-  "закрыто": "ожиданий закрыто",
-  "нехватка": "чего не хватает",
-  "срежут": "за что срежут",
-  "доработка": ["час на доработку", "часа на доработку", "часов на доработку"],
 };
-const HOT = new Set(["флаги", "срежут"]);
+const HOT = new Set(["флаги"]);
 
 const tilesFor = (meta, chunks) => {
   const out = [];
@@ -679,16 +677,10 @@ const tilesFor = (meta, chunks) => {
     return countItems(body) || none;
   };
 
-  if (meta?.["закрыто"] !== undefined) {
-    const done = nums(meta["закрыто"])?.[0];
-    const all = nums(meta["всего"])?.[0];
-    if (done !== undefined) add("закрыто", all === undefined ? done : `${done} из ${all}`);
-    add("нехватка", count(/чего не хватает/i));
-    add("срежут", count(/срежут первым делом/i));
-    const fix = secOf(chunks, /что дописать перед сдачей/i);
-    add("доработка", fix ? hoursIn(fix) : null);
-    return out;
-  }
+  // Проверка готовой работы: раньше здесь были плитки «закрыто/нехватка/
+  // срежут/доработка» — теперь то же самое нагляднее показывает дашборд
+  // (#dash) над разделами.
+  if (meta?.["закрыто"] !== undefined) return out;
 
   const h = nums(meta?.["часы"]);
   if (h) add("часы", dash(h[0], h[1]));
@@ -723,12 +715,50 @@ const drawTiles = (meta, chunks) => {
   box.className = want.length ? "on" : "";
 };
 
+const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : "");
+
+// Дашборд проверки готовой работы: вердикт крупно, сетка ожиданий (закрыто
+// из служебной строки — цветом --ok, остальное приглушено) и три главных
+// риска. Только для режима review — распознаём его по наличию «закрыто» в
+// служебной строке, второй раз к API не ходим, всё уже есть в md.
+const drawDash = (meta, chunks) => {
+  $("dash").className = "";
+  const done = nums(meta?.["закрыто"])?.[0];
+  if (done === undefined) return;
+  const all = Math.max(done, nums(meta["всего"])?.[0] ?? done, 1);
+  const verdict = cap(meta["вердикт"] ?? "");
+
+  $("dash-verdict-word").hidden = !verdict;
+  $("dash-verdict-word").textContent = verdict;
+  $("dash-verdict-word").className = verdictClass(meta["вердикт"] ?? "");
+
+  const fixHours = hoursIn(secOf(chunks, /что дописать перед сдачей/i) ?? "");
+  const subParts = [];
+  if (fixHours) subParts.push(`${fixHours} ч на доработку`);
+  subParts.push(`${done} из ${all} ожиданий закрыто`);
+  $("dash-verdict-sub").textContent = subParts.join(" · ");
+
+  $("dash-grid").innerHTML = Array.from({ length: all }, (_, i) =>
+    `<i class="${i < done ? "done" : ""}"></i>`).join("");
+
+  const risks = topRisks(chunks);
+  $("dash-risks").hidden = !risks.length;
+  if (risks.length) {
+    $("dash-risks-list").innerHTML = risks.map(([head, rest]) =>
+      head ? `<li>${esc(head)}${rest ? ` <span>${esc(rest)}</span>` : ""}</li>` : `<li>${esc(rest)}</li>`
+    ).join("");
+  }
+
+  $("dash").className = "on";
+};
+
 // Ответ приходит разделами со своими заголовками — раскладываем по карточкам.
 const render = (md) => {
   const meta = readMeta(md);
   drawGauge(meta);
   const body = md.replace(/<!--[\s\S]*?(?:-->|$)/g, "").trim();
   const chunks = body.split(/\n(?=##\s)/).filter((c) => c.trim());
+  drawDash(meta, chunks);
   drawTiles(meta, chunks);
   const titles = [];
   $("out").innerHTML = chunks
@@ -748,6 +778,7 @@ $("go").onclick = async () => {
   $("out").innerHTML = "";
   $("toc").className = "";
   $("gauge").className = "";
+  $("dash").className = "";
   $("tiles").innerHTML = "";
   $("tiles").className = "";
 
