@@ -923,7 +923,7 @@
                   "type": "text",
                   "id": "oz96J",
                   "fill": "#e8e6ee",
-                  "content": "4",
+                  "content": "3",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
@@ -997,7 +997,7 @@
                   "type": "text",
                   "id": "Du23N",
                   "fill": "#e8e6ee",
-                  "content": "5",
+                  "content": "3",
                   "fontFamily": "Literata",
                   "fontSize": 28,
                   "fontWeight": "600"
@@ -1008,7 +1008,7 @@
                   "fill": "#9b98a8",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "вопросов до старта",
+                  "content": "вопроса до старта",
                   "lineHeight": 1.35,
                   "fontFamily": "Golos Text",
                   "fontSize": 12.5,
@@ -1023,160 +1023,160 @@
           "id": "c8X7J",
           "clip": true,
           "width": "fill_container",
-          "height": 30,
+          "layout": "vertical",
           "gap": 8,
           "children": [
             {
               "type": "frame",
-              "id": "SEFjG",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
+              "id": "MYH8a",
+              "gap": 8,
               "children": [
                 {
-                  "type": "text",
-                  "id": "JA8JD",
-                  "fill": "#9b98a8",
-                  "content": "Стоит ли браться",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
+                  "type": "frame",
+                  "id": "EbIIV",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FYFUP",
+                      "fill": "#9b98a8",
+                      "content": "Стоит ли браться",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d13KB",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BsgJI",
+                      "fill": "#9b98a8",
+                      "content": "Что просят буквально",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "y6t2n",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uIDfH",
+                      "fill": "#9b98a8",
+                      "content": "Чего в брифе нет, но спросят",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "zloqi",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
+              "id": "r3ga9G",
+              "gap": 8,
               "children": [
                 {
-                  "type": "text",
-                  "id": "wrHIY",
-                  "fill": "#9b98a8",
-                  "content": "Что просят буквально",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "JHr9D",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
+                  "type": "frame",
+                  "id": "Uo96W",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EG7mS",
+                      "fill": "#9b98a8",
+                      "content": "Как это будут оценивать",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
                 {
-                  "type": "text",
-                  "id": "Hnd4q",
-                  "fill": "#9b98a8",
-                  "content": "Чего в брифе нет, но спросят",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "IChgO",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
+                  "type": "frame",
+                  "id": "dnqcG",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lFWqC",
+                      "fill": "#9b98a8",
+                      "content": "Красные флаги",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
                 {
-                  "type": "text",
-                  "id": "Q5yKR5",
-                  "fill": "#9b98a8",
-                  "content": "Как это будут оценивать",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "BgPZr",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
+                  "type": "frame",
+                  "id": "T8jNi",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RBVHH",
+                      "fill": "#9b98a8",
+                      "content": "Что спросить до старта",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
                 {
-                  "type": "text",
-                  "id": "hLDXp",
-                  "fill": "#9b98a8",
-                  "content": "Красные флаги",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "uqL13",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "IzR0R",
-                  "fill": "#9b98a8",
-                  "content": "Что спросить до старта",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "FalFN",
-              "name": "Чип",
-              "height": "fill_container",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "orHGZ",
-                  "fill": "#9b98a8",
-                  "content": "Что сдавать",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
+                  "type": "frame",
+                  "id": "J4F59c",
+                  "fill": "#17161c",
+                  "cornerRadius": 999,
+                  "stroke": "#2a2833",
+                  "strokeWidth": 1,
+                  "padding": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rxZUJ",
+                      "fill": "#9b98a8",
+                      "content": "Что сдавать",
+                      "fontFamily": "Golos Text",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 }
               ]
             }
@@ -1588,6 +1588,114 @@
         },
         {
           "type": "frame",
+          "id": "Z6Wu0B",
+          "width": "fill_container",
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "m9ndDH",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AFcDn",
+                  "fill": "#9b98a8",
+                  "content": "За что срежут первым делом",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DJCZh",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vdv7z",
+                  "fill": "#9b98a8",
+                  "content": "Что уже закрыто",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SOzU3",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tKMVP",
+                  "fill": "#9b98a8",
+                  "content": "Чего не хватает",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fpLp8",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sPFr3",
+                  "fill": "#9b98a8",
+                  "content": "Что дописать перед сдачей",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qqM2E",
+              "fill": "#17161c",
+              "cornerRadius": 999,
+              "stroke": "#2a2833",
+              "strokeWidth": 1,
+              "padding": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "o4Njy",
+                  "fill": "#9b98a8",
+                  "content": "Как это прочтут",
+                  "fontFamily": "Golos Text",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
           "id": "UZpKt",
           "name": "Риски",
           "width": "fill_container",
@@ -1712,114 +1820,6 @@
         },
         {
           "type": "frame",
-          "id": "Z6Wu0B",
-          "width": "fill_container",
-          "gap": 8,
-          "children": [
-            {
-              "type": "frame",
-              "id": "DJCZh",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "vdv7z",
-                  "fill": "#9b98a8",
-                  "content": "Что уже закрыто",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "SOzU3",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "tKMVP",
-                  "fill": "#9b98a8",
-                  "content": "Чего не хватает",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "m9ndDH",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "AFcDn",
-                  "fill": "#9b98a8",
-                  "content": "За что срежут первым делом",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "fpLp8",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "sPFr3",
-                  "fill": "#9b98a8",
-                  "content": "Что дописать перед сдачей",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "qqM2E",
-              "fill": "#17161c",
-              "cornerRadius": 999,
-              "stroke": "#2a2833",
-              "strokeWidth": 1,
-              "padding": 7,
-              "children": [
-                {
-                  "type": "text",
-                  "id": "o4Njy",
-                  "fill": "#9b98a8",
-                  "content": "Как это прочтут",
-                  "fontFamily": "Golos Text",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
           "id": "w9aVg",
           "name": "Раздел — Что уже закрыто",
           "width": "fill_container",
@@ -1882,7 +1882,79 @@
               "fill": "#e8e6ee",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Нет второй части задания: разбор конкурентов и описание логики действий сотрудника второй линии — М3 · это невозможность, а нежданный артефакт: на нём отказывают до всякого обсуждения дизайна.\nНет пояснительной записки — М2 · принимающий ищет ход мысли, а не только картинку.\nФорма без состояний: ошибка, отправлено, сбой — М5 · форма названа в задании прямо.",
+              "content": "1. Пояснительной записки нет, а тестовое оценивают в первую очередь по объяснению решений. М2\n2. Расхождение с формулировкой «один экран» никак не объяснено. М5\n3. Состояний формы нет: ошибка, отправлено, сбой. М5\n4. Не показано, что вы смотрели конкурентов, хотя задание прямо на них ссылалось. М1\n5. Макет не подготовлен к передаче разработчику: сетка, компоненты, названные слои. М9\n6. Не заявлены брейкпоинты, на которых рисовали. М9\n7. Тексты и контент отзывов: рыба вместо настоящих формулировок. М1\n8. Условия неоплачиваемого тестового не зафиксированы: права на макет и что будет после оценки. М7",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NBnLf",
+          "name": "Раздел — Что дописать перед сдачей",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "j8BCv",
+              "fill": "#e8e6ee",
+              "content": "Что дописать перед сдачей",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "K97uQ",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Порядок по убыванию цены отказа.\n1. Вторая часть задания: разбор конкурентов и логика действий сотрудника второй линии. Половина задания, без неё дизайн не смотрят. 2–2,5 ч.\n2. Пояснительная записка на страницу: почему такая структура, что было альтернативой. 1 ч.\n3. Состояния формы: ошибка, отправлено, сбой. 1–1,5 ч.\nИтого 4–5 часов. Если остаётся вдвое меньше, делайте пункты 1 и 2: третий закрывается словами в записке.",
+              "lineHeight": 1.6,
+              "fontFamily": "Golos Text",
+              "fontSize": 15.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XGsBu",
+          "name": "Раздел — Как это прочтут",
+          "width": "fill_container",
+          "fill": "#17161c",
+          "cornerRadius": 14,
+          "stroke": "#2a2833",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 22,
+          "children": [
+            {
+              "type": "text",
+              "id": "dnfQs",
+              "fill": "#e8e6ee",
+              "content": "Как это прочтут",
+              "fontFamily": "Literata",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "TsDJm",
+              "fill": "#e8e6ee",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Первое впечатление сильное: страница собрана целиком, объяснение с источниками и метриками усилено, разделы видно. Сразу следом идёт провал: половина задания не сделана. Проверяющий увидит аккуратного исполнителя, который читает задание невнимательно, и это опаснее слабого макета.",
               "lineHeight": 1.6,
               "fontFamily": "Golos Text",
               "fontSize": 15.5,
