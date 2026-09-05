@@ -622,9 +622,12 @@ const fmtHours = (n) => {
 };
 
 // «Всего 4–5 часов» — модель уже сложила часы по пунктам, повторное сложение
-// пунктов поверх неё удваивает счёт. Если такая строка есть — берём числа
-// только из неё; иначе складываем часы каждого пункта (нижние с нижними,
-// верхние с верхними). Минуты («30 мин») не считаем и не переводим.
+// пунктов поверх неё удваивает счёт. Итог — только строка, которая явно
+// НАЧИНАЕТСЯ со слова «Всего/Итого/Суммарно» (после необязательной жирности):
+// «дешевле всего» и «если до сдачи 4–5 часов» этим словом не начинаются и
+// не итог, это часть пункта и условие соответственно. Итога нет — складываем
+// часы по строкам списка (нижние с нижними, верхние с верхними): вводная
+// фраза-совет вне списка в сумму не попадает. Минуты («30 мин») не считаем.
 const hoursIn = (body) => {
   const sum = (text) => {
     let lo = 0, hi = 0, found = false;
@@ -637,8 +640,9 @@ const hoursIn = (body) => {
     return found ? [lo, hi] : null;
   };
   // \b не работает на кириллице (см. выше) — граница слова руками.
-  const totalLine = body.match(/^.*(?<![а-яё])(?:всего|итого|суммарно)(?![а-яё]).*$/im)?.[0];
-  const r = (totalLine && sum(totalLine)) || sum(body);
+  const totalLine = body.match(/^\s*\**\s*(?:всего|итого|суммарно)(?![а-яё])[^\n]*$/im)?.[0];
+  const items = body.match(/^\s{0,3}(?:[-*+]|\d+[.)])\s+.*$/gm)?.join("\n");
+  const r = (totalLine && sum(totalLine)) || sum(items ?? body);
   if (!r) return null;
   const [lo, hi] = r;
   return lo === hi ? fmtHours(lo) : `${fmtHours(lo)}–${fmtHours(hi)}`;
@@ -697,6 +701,11 @@ const drawTiles = (meta, chunks) => {
   const want = tilesFor(meta, chunks);
   const box = $("tiles");
   const keep = new Set();
+  // Курсор — первый узел старого набора, ещё не подтверждённый на своём месте.
+  // Совпал с текущим ключом — оставляем как есть (никакой перестановки, числа
+  // не мигают); иначе вставляем нужный узел перед курсором, а сам курсор не
+  // двигаем: он всё ещё кандидат на следующий по счёту ключ.
+  let ref = box.firstChild;
   for (const [k, val, label] of want) {
     keep.add(k);
     let el = box.querySelector(`[data-k="${k}"]`);
@@ -704,8 +713,9 @@ const drawTiles = (meta, chunks) => {
       el = document.createElement("div");
       el.dataset.k = k;
       el.innerHTML = "<b></b><span></span>";
-      box.append(el);
     }
+    if (el === ref) ref = ref.nextSibling;
+    else box.insertBefore(el, ref);
     const cls = "tile" + (HOT.has(k) && val !== "0" ? " hot" : "");
     if (el.className !== cls) el.className = cls;
     if (el.firstChild.textContent !== val) el.firstChild.textContent = val;
