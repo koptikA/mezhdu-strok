@@ -26,3 +26,18 @@ skills-lock.json
 STATUS.md
 docs/05-submission.md
 smoke-out.md
+
+# Сырые выхлопы прогонов: нужны на месте, в публичный репозиторий не уходят.
+broker-analyze.md
+broker-review.md
+smoke-analyze.md
+smoke-review.md
+
+# Рабочие документы сборки: бриф, требования, спецификация, план.
+docs/
+
+# Исходник холста: формат pencil, вне pencil не читается.
+design.pen
+
+# Разведка рынка: рабочая заметка, не документация продукта.
+RESEARCH.md
